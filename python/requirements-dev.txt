@@ -1,0 +1,4 @@
+-r requirements.txt
+click>=8.1
+pytest>=7
+qiskit>=2,<3

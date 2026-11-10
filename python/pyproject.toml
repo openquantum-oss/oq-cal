@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "oq-cal"
+version = "0.1.0"
+description = "A vendor-neutral JSON interchange format for QPU calibration and characterization data"
+# The canonical README and LICENSE live at the monorepo root; hatchling requires
+# metadata file references to stay within this project dir, so the long
+# description is inlined here (kept short on purpose) and the license is declared
+# by SPDX expression rather than a bundled file.
+readme = { text = "oq-cal — a vendor-neutral, JSON-native interchange format for QPU calibration and characterization data, plus a reference Python library with converters to and from the formats in common use today. See the repository README and the `spec/` directory for details.", content-type = "text/markdown" }
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "Quantum Rings" }]
+keywords = ["quantum", "calibration", "qpu", "interchange", "openqasm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "pydantic>=2",
+    "jsonschema>=4.18",
+]
+
+[project.optional-dependencies]
+qiskit = ["qiskit>=2,<3"]
+cli = ["click>=8.1"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+oq-cal = "oq_cal.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/openquantum-oss/oq-cal-staging"
+Specification = "https://github.com/openquantum-oss/oq-cal-staging/tree/main/spec"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/oq_cal"]
+
+# The bundled schema copy at src/oq_cal/_schema/oq-cal-0.1.schema.json is committed
+# and ships inside the package. CI (the "schema" job) enforces that it stays
+# byte-identical to spec/schema/oq-cal-0.1.schema.json at the monorepo root. (We no
+# longer force-include from ../spec because hatchling requires build inputs to
+# live within this project directory.)
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

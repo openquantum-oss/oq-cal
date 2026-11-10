@@ -1,0 +1,132 @@
+site_name: Open Quantum Calibration Standard (oq-cal)
+site_description: >-
+  A vendor-neutral, JSON-native interchange format for QPU calibration and
+  characterization data.
+site_url: https://openquantum-oss.github.io/oq-cal-staging/
+site_author: Quantum Rings
+
+repo_name: openquantum-oss/oq-cal-staging
+repo_url: https://github.com/openquantum-oss/oq-cal-staging
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Quantum Rings — Apache-2.0
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: oq-light
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: oq-dark
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - include-markdown
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [python/src]
+          options:
+            docstring_style: numpy
+            show_root_heading: true
+            show_source: true
+            show_signature_annotations: true
+            separate_signature: true
+            merge_init_into_class: true
+            members_order: source
+            filters: ["!^_"]
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/openquantum-oss/oq-cal-staging
+
+nav:
+  - Home: index.md
+  - Specification:
+      - Introduction: spec/introduction.md
+      - Specification v0.1: spec/specification.md
+      - JSON Schema: spec/schema.md
+  - Guides:
+      - Getting started: guides/getting-started.md
+      - "Converting: AWS Braket": guides/converting-braket.md
+      - "Converting: IBM properties": guides/converting-ibm.md
+      - "Converting: Boulder Opal": guides/converting-boulder-opal.md
+      - "Converting: QUAM / QUAlibrate": guides/converting-quam.md
+      - Qiskit integration: guides/qiskit.md
+      - Validating documents: guides/validating.md
+      - Diffing calibrations: guides/diffing.md
+      - CLI reference: guides/cli.md
+  - TypeScript: typescript.md
+  - Conformance: conformance.md
+  - Python API:
+      - Overview: api/index.md
+      - Models: api/models.md
+      - Validation: api/validate.md
+      - Serialization: api/io.md
+      - Diff: api/diff.md
+      - Importers: api/importers.md
+      - Exporters: api/exporters.md

@@ -1,0 +1,6 @@
+{
+  "source": "sources/quam/synthetic_state.json",
+  "importer": "quam-state",
+  "kwargs": {},
+  "description": "QUAM state.json (synthetic full-depth transmon): per-qubit coherence + pulse defcals."
+}

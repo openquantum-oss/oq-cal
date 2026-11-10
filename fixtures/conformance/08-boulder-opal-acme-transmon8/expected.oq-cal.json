@@ -1,0 +1,466 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "acme-transmon-8",
+    "model": "acme-transmon-8",
+    "num_qubits": 6,
+    "qubit_labels": {
+      "$0": "qA0",
+      "$1": "qA1",
+      "$2": "qA2",
+      "$3": "qA3",
+      "$4": "qA4",
+      "$5": "qA5"
+    },
+    "enabled_qubits": [
+      "$0",
+      "$1",
+      "$2",
+      "$3",
+      "$4",
+      "$5"
+    ],
+    "coupling_map": [
+      [
+        "$0",
+        "$1"
+      ],
+      [
+        "$1",
+        "$0"
+      ]
+    ]
+  },
+  "snapshot": {
+    "captured_at": "2026-09-02T11:20:05.512300+00:00",
+    "source": "boulder-opal",
+    "source_schema": "boulder-opal-snapshot"
+  },
+  "qubits": {
+    "$0": {
+      "t1": {
+        "value": 0.000018220000000000002,
+        "unit": "s",
+        "err_minus": 8.200000000000001e-7,
+        "err_plus": 9.100000000000001e-7,
+        "status": "good",
+        "updated_at": "2026-09-01T20:04:02.000000+00:00"
+      },
+      "t2": {
+        "value": 0.000012044,
+        "unit": "s",
+        "status": "approximate",
+        "updated_at": "2026-09-01T20:04:02.000000+00:00"
+      },
+      "t2_echo": {
+        "value": 0.00002498,
+        "unit": "s",
+        "status": "good"
+      },
+      "frequency_01": {
+        "value": 4821335012.44,
+        "unit": "Hz",
+        "err_minus": 5120.0,
+        "err_plus": 5120.0,
+        "status": "good",
+        "updated_at": "2026-09-01T22:10:11.100000+00:00"
+      },
+      "anharmonicity": {
+        "value": -201443900.0,
+        "unit": "Hz",
+        "status": "good",
+        "updated_at": "2026-09-01T22:10:11.100000+00:00"
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9445,
+          "unit": "dimensionless",
+          "method": "confusion_matrix_diagonal",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.961,
+            0.039
+          ],
+          [
+            0.072,
+            0.928
+          ]
+        ],
+        "classifier": {
+          "type": "linear_iq",
+          "projection": [
+            -48.113,
+            -5.902
+          ],
+          "threshold": 0.2041,
+          "status": "calibrated"
+        }
+      }
+    },
+    "$1": {
+      "t1": {
+        "value": 0.00001599,
+        "unit": "s",
+        "err_minus": 6.4e-7,
+        "err_plus": 6.4e-7,
+        "status": "good",
+        "updated_at": "2026-09-01T20:05:50.000000+00:00"
+      },
+      "t2": {
+        "value": 9.87e-6,
+        "unit": "s",
+        "status": "stale"
+      },
+      "frequency_01": {
+        "value": 4902110553.07,
+        "unit": "Hz",
+        "err_minus": 4880.0,
+        "err_plus": 4880.0,
+        "status": "good",
+        "updated_at": "2026-09-01T22:11:43.500000+00:00"
+      },
+      "anharmonicity": {
+        "value": -198770100.0,
+        "unit": "Hz",
+        "status": "good"
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9335,
+          "unit": "dimensionless",
+          "method": "confusion_matrix_diagonal",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.948,
+            0.052
+          ],
+          [
+            0.081,
+            0.919
+          ]
+        ],
+        "classifier": {
+          "type": "linear_iq",
+          "projection": [
+            -51.774,
+            -4.118
+          ],
+          "threshold": 0.1888,
+          "status": "calibrated"
+        }
+      }
+    }
+  },
+  "gates": [
+    {
+      "name": "x",
+      "qubits": [
+        "$0"
+      ],
+      "error": {
+        "value": 0.00088,
+        "unit": "dimensionless",
+        "status": "good",
+        "updated_at": "2026-09-01T23:00:00+00:00"
+      }
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$0",
+        "$1"
+      ],
+      "error": {
+        "value": 0.0121,
+        "unit": "dimensionless",
+        "status": "approximate",
+        "updated_at": "2026-09-01T23:02:00+00:00"
+      }
+    }
+  ],
+  "defcals": [
+    {
+      "gate": "x",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 3.2e-8,
+        "amp": 0.2041,
+        "motzoi": -0.11,
+        "frequency_hz": 4821335012.0
+      }
+    },
+    {
+      "gate": "sx",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 3.2e-8,
+        "amp": 0.1022,
+        "motzoi": -0.11,
+        "frequency_hz": 4821335012.0
+      }
+    },
+    {
+      "gate": "x",
+      "qubits": [
+        "$1"
+      ],
+      "params": {
+        "duration_s": 3.2e-8,
+        "amp": 0.2088,
+        "motzoi": -0.09,
+        "frequency_hz": 4902110553.0
+      }
+    },
+    {
+      "gate": "cz",
+      "qubits": [
+        "$0",
+        "$1"
+      ],
+      "params": {
+        "duration_s": 2.4e-7,
+        "amp": 0.6612,
+        "frequency_hz": 4861000000.0
+      }
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 2e-6,
+        "amp": 0.0355,
+        "frequency_hz": 6710200000.0,
+        "integration_time_s": 1.8e-6,
+        "role": "readout"
+      }
+    }
+  ],
+  "extensions": {
+    "boulder_opal": {
+      "_note": "SYNTHETIC fixture. Mirrors the structure of an edge calibration snapshot (Q-CTRL Scale Up derived) but every value is randomized and the device is fictional. Not real device data.",
+      "version": "2026-09-02 11:20:05.512300+00:00",
+      "qpu_model": "acme-transmon-8",
+      "enabled_qubits": [
+        "qA0",
+        "qA1",
+        "qA2",
+        "qA3",
+        "qA4",
+        "qA5"
+      ],
+      "components": {
+        "qA0": {
+          "dtype": "transmon",
+          "traits": [
+            "tunable"
+          ],
+          "freq_01": {
+            "value": 4821335012.44,
+            "err_minus": 5120.0,
+            "err_plus": 5120.0,
+            "calibration_status": "good",
+            "updated_at": "2026-09-01T22:10:11.100000+00:00"
+          },
+          "anharm": {
+            "value": -201443900.0,
+            "calibration_status": "good",
+            "updated_at": "2026-09-01T22:10:11.100000+00:00"
+          },
+          "t1": {
+            "value": {
+              "value": 18220,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "err_minus": 820.0,
+            "err_plus": 910.0,
+            "calibration_status": "good",
+            "updated_at": "2026-09-01T20:04:02.000000+00:00"
+          },
+          "t2": {
+            "value": {
+              "value": 12044,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "calibration_status": "approximate",
+            "updated_at": "2026-09-01T20:04:02.000000+00:00"
+          },
+          "t2_echo": {
+            "value": {
+              "value": 24980,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "calibration_status": "good"
+          },
+          "x_vp": 0.2041,
+          "sx_vp": 0.1022,
+          "dc_bias": 0.0134,
+          "gate_fidelity": 0.9991
+        },
+        "qA1": {
+          "dtype": "transmon",
+          "traits": [
+            "tunable"
+          ],
+          "freq_01": {
+            "value": 4902110553.07,
+            "err_minus": 4880.0,
+            "err_plus": 4880.0,
+            "calibration_status": "good",
+            "updated_at": "2026-09-01T22:11:43.500000+00:00"
+          },
+          "anharm": {
+            "value": -198770100.0,
+            "calibration_status": "good"
+          },
+          "t1": {
+            "value": {
+              "value": 15990,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "err_minus": 640.0,
+            "err_plus": 640.0,
+            "calibration_status": "good",
+            "updated_at": "2026-09-01T20:05:50.000000+00:00"
+          },
+          "t2": {
+            "value": {
+              "value": 9870,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "calibration_status": "stale"
+          },
+          "x_vp": 0.2088,
+          "sx_vp": 0.1044,
+          "dc_bias": -0.0051,
+          "gate_fidelity": 0.9986
+        },
+        "rA0": {
+          "dtype": "resonator",
+          "frequency_high": 6711000000.0,
+          "frequency_low": 6709500000.0,
+          "kappa_low": 410000.0,
+          "vp_low": 0.0391,
+          "vp_high": 0.0402
+        },
+        "port_drive_0": {
+          "dtype": "port",
+          "channel": "drive",
+          "lo": 4800000000.0
+        }
+      },
+      "classifiers": {
+        "qA0": {
+          "projection": [
+            -48.113,
+            -5.902
+          ],
+          "threshold": 0.2041,
+          "confusion_matrix": [
+            [
+              0.961,
+              0.039
+            ],
+            [
+              0.072,
+              0.928
+            ]
+          ],
+          "status": "calibrated"
+        },
+        "qA1": {
+          "projection": [
+            -51.774,
+            -4.118
+          ],
+          "threshold": 0.1888,
+          "confusion_matrix": [
+            [
+              0.948,
+              0.052
+            ],
+            [
+              0.081,
+              0.919
+            ]
+          ],
+          "status": "calibrated"
+        }
+      },
+      "defcals": {
+        "x:qA0": {
+          "duration": 3.2e-8,
+          "amp": 0.2041,
+          "motzoi": -0.11,
+          "frequency": 4821335012.0
+        },
+        "sx:qA0": {
+          "duration": 3.2e-8,
+          "amp": 0.1022,
+          "motzoi": -0.11,
+          "frequency": 4821335012.0
+        },
+        "x:qA1": {
+          "duration": 3.2e-8,
+          "amp": 0.2088,
+          "motzoi": -0.09,
+          "frequency": 4902110553.0
+        },
+        "cz:qA0_qA1": {
+          "duration": 2.4e-7,
+          "amp": 0.6612,
+          "frequency": 4861000000.0
+        },
+        "measure:qA0": {
+          "duration": 2e-6,
+          "amp": 0.0355,
+          "frequency": 6710200000.0,
+          "role": "readout",
+          "integration_time": 1.8e-6
+        }
+      },
+      "gate_errors": [
+        {
+          "gate": "x",
+          "qubits": [
+            "qA0"
+          ],
+          "value": 0.00088,
+          "calibration_status": "good",
+          "updated_at": "2026-09-01T23:00:00+00:00"
+        },
+        {
+          "gate": "cz",
+          "qubits": [
+            "qA0",
+            "qA1"
+          ],
+          "value": 0.0121,
+          "calibration_status": "approximate",
+          "updated_at": "2026-09-01T23:02:00+00:00"
+        }
+      ],
+      "controller_info": {
+        "vendor": "synthetic",
+        "firmware": "0.0.0-fixture"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "oq-cal": { "name": "oq-cal.device_calibration", "version": "0.1" },
+  "device": {
+    "id": "synthetic:acme.ion-12",
+    "vendor": "Acme",
+    "model": "acme-ion-12",
+    "num_qubits": 12
+  },
+  "snapshot": {
+    "captured_at": "2026-10-30T00:00:00+00:00",
+    "source": "synthetic",
+    "source_schema": "synthetic.aggregates/1"
+  },
+  "aggregates": {
+    "qubits": {
+      "t1": { "value": 95.0, "unit": "s" },
+      "t2": { "value": 1.2, "unit": "s" }
+    },
+    "readout": {
+      "fidelity": { "value": 0.9961, "unit": "dimensionless", "method": "rb_1q" },
+      "duration": { "value": 0.00015, "unit": "s" }
+    },
+    "gates_1q": {
+      "fidelity": { "value": 0.99981, "unit": "dimensionless", "method": "rb", "median": 0.99984 },
+      "duration": { "value": 0.00013, "unit": "s" }
+    },
+    "gates_2q": {
+      "fidelity": { "value": 0.9939, "unit": "dimensionless", "method": "direct_rb" },
+      "duration": { "value": 0.00097, "unit": "s" }
+    },
+    "ops": {
+      "reset_duration": { "value": 5e-05, "unit": "s" }
+    }
+  },
+  "extensions": {
+    "synthetic_source": { "note": "verbatim source payload would live here" }
+  }
+}

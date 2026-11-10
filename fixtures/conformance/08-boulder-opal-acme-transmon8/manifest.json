@@ -1,0 +1,6 @@
+{
+  "source": "sources/boulder-opal/synthetic_acme_transmon8.json",
+  "importer": "boulder-opal",
+  "kwargs": {},
+  "description": "Boulder Opal calibration snapshot (synthetic Acme transmon-8): components, classifiers, defcals, mixed datum shapes."
+}

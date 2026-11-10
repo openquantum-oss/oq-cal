@@ -1,0 +1,20 @@
+{
+  "oq-cal": { "name": "oq-cal.device_calibration", "version": "0.1" },
+  "device": {
+    "id": "synthetic:acme.transmon-8",
+    "vendor": "Acme",
+    "model": "acme-transmon-8",
+    "num_qubits": 8
+  },
+  "snapshot": {
+    "captured_at": "2026-09-02T11:20:05+00:00",
+    "source": "synthetic",
+    "source_schema": "synthetic.per_qubit/1"
+  },
+  "qubits": {
+    "$0": {
+      "t1": { "value": 18220, "unit": "ns" },
+      "frequency_01": { "value": 4.82, "unit": "GHz" }
+    }
+  }
+}

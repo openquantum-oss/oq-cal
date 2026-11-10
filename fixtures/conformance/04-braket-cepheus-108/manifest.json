@@ -1,0 +1,6 @@
+{
+  "source": "sources/braket/braket_standardized_cepheus_108.json",
+  "importer": "braket",
+  "kwargs": {},
+  "description": "AWS Braket standardized device properties, IQM Cepheus-1 (schema v1, 108 qubits, sparse: one uncharacterized qubit index)."
+}

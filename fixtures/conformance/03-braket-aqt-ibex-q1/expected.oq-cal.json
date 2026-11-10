@@ -1,0 +1,425 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "braket-device",
+    "num_qubits": 12
+  },
+  "snapshot": {
+    "captured_at": "2026-10-29T14:15:28+00:00",
+    "source": "aws-braket",
+    "source_schema": "braket.device_schema.standardized_gate_model_qpu_device_properties v3"
+  },
+  "aggregates": {
+    "qubits": {
+      "t1": {
+        "value": 1.12,
+        "unit": "s",
+        "std_error": 0.07
+      },
+      "t2": {
+        "value": 0.16,
+        "unit": "s",
+        "std_error": 0.04
+      }
+    },
+    "readout": {
+      "fidelity": {
+        "value": 0.9978,
+        "unit": "dimensionless",
+        "metric": "readout_fidelity"
+      },
+      "duration": {
+        "value": 0.001,
+        "unit": "s"
+      }
+    },
+    "gates_1q": {
+      "fidelity": {
+        "value": 0.9998024166666667,
+        "unit": "dimensionless",
+        "median": 0.9998,
+        "method": "rb"
+      },
+      "duration": {
+        "value": 0.000044999999999999996,
+        "unit": "s"
+      }
+    },
+    "gates_2q": {
+      "fidelity": {
+        "value": 0.981,
+        "unit": "dimensionless",
+        "std_error": 0.005,
+        "method": "rb"
+      },
+      "duration": {
+        "value": 0.000335,
+        "unit": "s"
+      }
+    }
+  },
+  "qubits": {
+    "$0": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.9997,
+            "unit": "dimensionless",
+            "std_error": 0.00004,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$1": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.99979,
+            "unit": "dimensionless",
+            "std_error": 0.00004,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$2": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.99981,
+            "unit": "dimensionless",
+            "std_error": 0.00003,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$3": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.9998,
+            "unit": "dimensionless",
+            "std_error": 0.00003,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$4": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.999851,
+            "unit": "dimensionless",
+            "std_error": 0.000017,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$5": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.99976,
+            "unit": "dimensionless",
+            "std_error": 0.00004,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$6": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.9997199999999999,
+            "unit": "dimensionless",
+            "std_error": 0.00007000000000000001,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$7": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.9998,
+            "unit": "dimensionless",
+            "std_error": 0.00005,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$8": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.99984,
+            "unit": "dimensionless",
+            "std_error": 0.00002,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$9": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.99991,
+            "unit": "dimensionless",
+            "std_error": 0.000014,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$10": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.9997799999999999,
+            "unit": "dimensionless",
+            "std_error": 0.00004,
+            "method": "rb"
+          }
+        }
+      ]
+    },
+    "$11": {
+      "benchmarks": [
+        {
+          "protocol": "rb",
+          "fidelity": {
+            "value": 0.999868,
+            "unit": "dimensionless",
+            "std_error": 0.00002,
+            "method": "rb"
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "braket": {
+      "braketSchemaHeader": {
+        "name": "braket.device_schema.standardized_gate_model_qpu_device_properties",
+        "version": "3"
+      },
+      "oneQubitProperties": {
+        "0": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9997,
+              "standardError": 0.00004,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "1": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99979,
+              "standardError": 0.00004,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "2": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99981,
+              "standardError": 0.00003,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "3": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9998,
+              "standardError": 0.00003,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "4": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.999851,
+              "standardError": 0.000017,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "5": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99976,
+              "standardError": 0.00004,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "6": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9997199999999999,
+              "standardError": 0.00007000000000000001,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "7": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9998,
+              "standardError": 0.00005,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "8": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99984,
+              "standardError": 0.00002,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "9": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99991,
+              "standardError": 0.000014,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "10": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9997799999999999,
+              "standardError": 0.00004,
+              "unit": "fraction"
+            }
+          ]
+        },
+        "11": {
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.999868,
+              "standardError": 0.00002,
+              "unit": "fraction"
+            }
+          ]
+        }
+      },
+      "T1": {
+        "value": 1.12,
+        "standardError": 0.07,
+        "unit": "s"
+      },
+      "T2": {
+        "value": 0.16,
+        "standardError": 0.04,
+        "unit": "s"
+      },
+      "readoutFidelity": [
+        {
+          "fidelity": 0.9978,
+          "unit": "fraction"
+        }
+      ],
+      "readoutDuration": {
+        "value": 1000,
+        "unit": "us"
+      },
+      "singleQubitGateDuration": {
+        "value": 45,
+        "unit": "us"
+      },
+      "singleQubitFidelity": [
+        {
+          "fidelityType": {
+            "name": "RANDOMIZED_BENCHMARKING"
+          },
+          "fidelity": 0.9998024166666667,
+          "median": 0.9998,
+          "unit": "fraction"
+        }
+      ],
+      "twoQubitGateFidelity": [
+        {
+          "fidelityType": {
+            "name": "RANDOMIZED_BENCHMARKING"
+          },
+          "fidelity": 0.981,
+          "standardError": 0.005,
+          "unit": "fraction"
+        }
+      ],
+      "twoQubitGateDuration": {
+        "value": 335,
+        "unit": "us"
+      },
+      "updatedAt": "2026-10-29T14:15:28+00:00"
+    }
+  }
+}
