@@ -1,0 +1,6 @@
+{
+  "source": "sources/braket/raw_aqt-ibex-q1.json",
+  "importer": "braket",
+  "kwargs": {},
+  "description": "AWS Braket standardized device properties, AQT Ibex (mixed granularity)."
+}

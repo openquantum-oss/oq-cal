@@ -1,0 +1,144 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "braket-device",
+    "num_qubits": 3,
+    "coupling_map": [
+      [
+        "$0",
+        "$1"
+      ],
+      [
+        "$1",
+        "$0"
+      ],
+      [
+        "$1",
+        "$2"
+      ],
+      [
+        "$2",
+        "$1"
+      ]
+    ]
+  },
+  "snapshot": {
+    "captured_at": "2026-05-01T00:00:00Z",
+    "source": "aws-braket",
+    "source_schema": "braket.device_schema.rigetti.rigetti_device_capabilities v2"
+  },
+  "qubits": {
+    "$0": {
+      "t1": {
+        "value": 0.00002,
+        "unit": "s"
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.97,
+          "unit": "dimensionless",
+          "std_error": 0.001,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        }
+      }
+    }
+  },
+  "defcals": [
+    {
+      "gate": "rx",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "frequency_hz": 4500000000.0
+      }
+    }
+  ],
+  "extensions": {
+    "braket": {
+      "_note": "Fictional Rigetti device-capabilities document. Not a real QPU.",
+      "braketSchemaHeader": {
+        "name": "braket.device_schema.rigetti.rigetti_device_capabilities",
+        "version": "2"
+      },
+      "service": {
+        "updatedAt": "2026-05-01T00:00:00Z"
+      },
+      "paradigm": {
+        "braketSchemaHeader": {
+          "name": "braket.device_schema.gate_model_qpu_paradigm_properties",
+          "version": "1"
+        },
+        "qubitCount": 3,
+        "nativeGateSet": [
+          "rx",
+          "cz"
+        ],
+        "connectivity": {
+          "fullyConnected": false,
+          "connectivityGraph": {
+            "0": [
+              "1"
+            ],
+            "1": [
+              "0",
+              "2"
+            ],
+            "2": [
+              "1"
+            ]
+          }
+        }
+      },
+      "standardized": {
+        "braketSchemaHeader": {
+          "name": "braket.device_schema.standardized_gate_model_qpu_device_properties",
+          "version": "1"
+        },
+        "oneQubitProperties": {
+          "0": {
+            "T1": {
+              "value": 0.00002,
+              "unit": "s"
+            },
+            "oneQubitFidelity": [
+              {
+                "fidelity": 0.97,
+                "standardError": 0.001,
+                "fidelityType": {
+                  "name": "READOUT"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "pulse": {
+        "ports": {
+          "q0_rf": {
+            "portId": "q0_rf",
+            "direction": "tx",
+            "portType": "rf",
+            "dt": 1e-9
+          }
+        },
+        "frames": {
+          "q0_rf_frame": {
+            "frameId": "q0_rf_frame",
+            "portId": "q0_rf",
+            "frequency": 4500000000,
+            "phase": 0,
+            "associatedGate": "rx",
+            "qubitMappings": [
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

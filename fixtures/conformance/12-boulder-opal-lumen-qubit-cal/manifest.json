@@ -1,0 +1,6 @@
+{
+  "source": "sources/boulder-opal/synthetic_lumen_qubit_cal.json",
+  "importer": "boulder-opal",
+  "kwargs": {},
+  "description": "Fictional Boulder Opal snapshot where qubit_cal wins over components, null measurements are omitted, and a non-operational qubit stays on the roster."
+}

@@ -1,0 +1,6 @@
+{
+  "source": "sources/braket/raw_ionq-forte-1-enterprise.json",
+  "importer": "braket",
+  "kwargs": {},
+  "description": "AWS Braket standardized device properties, IonQ Forte-1 Enterprise (aggregates-only)."
+}

@@ -1,0 +1,6 @@
+{
+  "source": "sources/rigetti/synthetic_rigetti_capabilities.json",
+  "importer": "braket",
+  "kwargs": {},
+  "description": "Fictional Rigetti device capabilities: connectivity graph, embedded standardized readout, and one pulse-frame frequency. No invented gate errors."
+}

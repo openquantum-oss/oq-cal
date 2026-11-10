@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openquantum.github.io/oq-cal/schema/oq-cal-0.1.schema.json",
+  "title": "oq-cal device calibration document",
+  "description": "A vendor-neutral JSON interchange format for QPU calibration and characterization data, version 0.1.",
+  "type": "object",
+  "required": ["oq-cal", "device", "snapshot"],
+  "properties": {
+    "oq-cal": { "$ref": "#/$defs/header" },
+    "device": { "$ref": "#/$defs/device" },
+    "snapshot": { "$ref": "#/$defs/snapshot" },
+    "aggregates": { "$ref": "#/$defs/aggregates" },
+    "qubits": {
+      "type": "object",
+      "description": "Per-qubit characterization, keyed by $n physical-qubit id.",
+      "propertyNames": { "$ref": "#/$defs/qubitRef" },
+      "additionalProperties": { "$ref": "#/$defs/qubitProperties" }
+    },
+    "gates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/gateEntry" }
+    },
+    "defcals": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/defcal" }
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Verbatim source payloads keyed by source name. Conversion into oq-cal is never lossy.",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "header": {
+      "type": "object",
+      "description": "The versioned schema header.",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "oq-cal.device_calibration" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" }
+      },
+      "additionalProperties": false
+    },
+    "device": {
+      "type": "object",
+      "description": "Which machine this document describes.",
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string" },
+        "vendor": { "type": "string" },
+        "model": { "type": "string" },
+        "num_qubits": { "type": "integer", "minimum": 0 },
+        "qubit_labels": {
+          "type": "object",
+          "description": "Map from $n physical-qubit id to vendor-native label (e.g. \"qA4\").",
+          "propertyNames": { "$ref": "#/$defs/qubitRef" },
+          "additionalProperties": { "type": "string" }
+        },
+        "enabled_qubits": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/qubitRef" }
+        },
+        "coupling_map": {
+          "type": "array",
+          "description": "Optional directed connectivity as ordered [$i, $j] pairs.",
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/qubitRef" },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "snapshot": {
+      "type": "object",
+      "description": "When and from where this document was captured.",
+      "required": ["source"],
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "captured_at": {
+          "type": ["string", "null"],
+          "description": "ISO-8601 timestamp of when the snapshot was captured."
+        },
+        "source": { "type": "string" },
+        "source_schema": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "qubitRef": {
+      "type": "string",
+      "pattern": "^\\$[0-9]+$",
+      "description": "Physical-qubit reference, OpenQASM style: a dollar sign followed by the integer index."
+    },
+    "unit": {
+      "type": "string",
+      "description": "SI-canonical unit. Allowed: s, Hz, dimensionless (base SI units only; no prefixes).",
+      "enum": ["s", "Hz", "dimensionless"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["good", "approximate", "stale", "bad", "unmeasured"]
+    },
+    "datum": {
+      "type": "object",
+      "description": "A single measured value. Only value+unit are required; everything else is optional.",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "$ref": "#/$defs/unit" },
+        "std_error": { "type": "number", "minimum": 0 },
+        "err_minus": { "type": "number", "minimum": 0 },
+        "err_plus": { "type": "number", "minimum": 0 },
+        "median": { "type": "number" },
+        "method": { "type": "string" },
+        "metric": {
+          "type": "string",
+          "description": "Mathematical quantity this number is. Recommended: average_gate_fidelity, process_fidelity, state_fidelity, readout_fidelity, assignment_error, average_gate_error, rb_decay. Other strings are valid. method names the protocol; metric names the quantity."
+        },
+        "status": { "$ref": "#/$defs/status" },
+        "updated_at": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true,
+      "not": {
+        "anyOf": [
+          { "required": ["std_error", "err_minus"] },
+          { "required": ["std_error", "err_plus"] }
+        ]
+      },
+      "dependentRequired": {
+        "err_minus": ["err_plus"],
+        "err_plus": ["err_minus"]
+      }
+    },
+    "confusionMatrix": {
+      "type": "array",
+      "description": "Readout confusion matrix. Rows index prepared state, columns index assigned state; rows sum to ~1.",
+      "items": {
+        "type": "array",
+        "items": { "type": "number" },
+        "minItems": 2
+      },
+      "minItems": 2
+    },
+    "classifier": {
+      "type": "object",
+      "description": "Readout discriminator parameters.",
+      "properties": {
+        "type": { "type": "string" },
+        "projection": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "threshold": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "readout": {
+      "type": "object",
+      "properties": {
+        "fidelity": { "$ref": "#/$defs/datum" },
+        "duration": { "$ref": "#/$defs/datum" },
+        "confusion_matrix": { "$ref": "#/$defs/confusionMatrix" },
+        "classifier": { "$ref": "#/$defs/classifier" }
+      },
+      "additionalProperties": true
+    },
+    "benchmark": {
+      "type": "object",
+      "description": "A protocol-level benchmark result (e.g. randomized benchmarking) attached to a qubit, pair, or gate.",
+      "required": ["protocol"],
+      "properties": {
+        "protocol": { "type": "string" },
+        "fidelity": { "$ref": "#/$defs/datum" },
+        "error": { "$ref": "#/$defs/datum" },
+        "qubits": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/qubitRef" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "qubitProperties": {
+      "type": "object",
+      "description": "Per-qubit characterization.",
+      "properties": {
+        "t1": { "$ref": "#/$defs/datum" },
+        "t2": { "$ref": "#/$defs/datum" },
+        "t2_echo": { "$ref": "#/$defs/datum" },
+        "frequency_01": { "$ref": "#/$defs/datum" },
+        "anharmonicity": { "$ref": "#/$defs/datum" },
+        "readout": { "$ref": "#/$defs/readout" },
+        "benchmarks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/benchmark" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "aggregates": {
+      "type": "object",
+      "description": "Device-level medians and averages when per-qubit data is unavailable.",
+      "properties": {
+        "qubits": {
+          "type": "object",
+          "properties": {
+            "t1": { "$ref": "#/$defs/datum" },
+            "t2": { "$ref": "#/$defs/datum" },
+            "t2_echo": { "$ref": "#/$defs/datum" }
+          },
+          "additionalProperties": true
+        },
+        "readout": {
+          "type": "object",
+          "properties": {
+            "fidelity": { "$ref": "#/$defs/datum" },
+            "duration": { "$ref": "#/$defs/datum" }
+          },
+          "additionalProperties": true
+        },
+        "gates_1q": {
+          "type": "object",
+          "properties": {
+            "fidelity": { "$ref": "#/$defs/datum" },
+            "error": { "$ref": "#/$defs/datum" },
+            "duration": { "$ref": "#/$defs/datum" }
+          },
+          "additionalProperties": true
+        },
+        "gates_2q": {
+          "type": "object",
+          "properties": {
+            "fidelity": { "$ref": "#/$defs/datum" },
+            "error": { "$ref": "#/$defs/datum" },
+            "duration": { "$ref": "#/$defs/datum" }
+          },
+          "additionalProperties": true
+        },
+        "ops": {
+          "type": "object",
+          "description": "Durations of elementary operations, e.g. reset_duration.",
+          "additionalProperties": { "$ref": "#/$defs/datum" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "gateEntry": {
+      "type": "object",
+      "description": "A characterized gate on specific qubits.",
+      "required": ["name", "qubits"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "stdgates vocabulary where possible (x, sx, rz, cz, ...); native/benchmark names allowed otherwise."
+        },
+        "qubits": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/qubitRef" },
+          "minItems": 1
+        },
+        "fidelity": { "$ref": "#/$defs/datum" },
+        "error": { "$ref": "#/$defs/datum" },
+        "duration": { "$ref": "#/$defs/datum" },
+        "benchmarks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/benchmark" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "defcal": {
+      "type": "object",
+      "description": "Per-gate pulse and control parameters, named after OpenQASM's defcal.",
+      "required": ["gate", "qubits"],
+      "properties": {
+        "gate": { "type": "string" },
+        "qubits": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/qubitRef" },
+          "minItems": 1
+        },
+        "params": {
+          "type": "object",
+          "description": "Pulse parameters. SI-suffixed keys (duration_s, frequency_hz, integration_time_s) carry base-SI values; dimensionless control params (amp, motzoi) carry bare numbers.",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

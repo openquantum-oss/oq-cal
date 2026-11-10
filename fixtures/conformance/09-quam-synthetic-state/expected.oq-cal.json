@@ -1,0 +1,243 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "quam-device",
+    "num_qubits": 2,
+    "qubit_labels": {
+      "$0": "q0",
+      "$1": "q1"
+    },
+    "coupling_map": [
+      [
+        "$0",
+        "$1"
+      ],
+      [
+        "$1",
+        "$0"
+      ]
+    ]
+  },
+  "snapshot": {
+    "source": "quam-state",
+    "source_schema": "quam-state.json"
+  },
+  "qubits": {
+    "$0": {
+      "t1": {
+        "value": 0.00001822,
+        "unit": "s"
+      },
+      "t2": {
+        "value": 0.000012044,
+        "unit": "s"
+      },
+      "t2_echo": {
+        "value": 0.00002498,
+        "unit": "s"
+      },
+      "frequency_01": {
+        "value": 4821335012.0,
+        "unit": "Hz"
+      },
+      "anharmonicity": {
+        "value": -201443900.0,
+        "unit": "Hz"
+      }
+    },
+    "$1": {
+      "t1": {
+        "value": 0.00001599,
+        "unit": "s"
+      },
+      "t2": {
+        "value": 9.87e-6,
+        "unit": "s"
+      },
+      "frequency_01": {
+        "value": 4902110553.0,
+        "unit": "Hz"
+      },
+      "anharmonicity": {
+        "value": -198770100.0,
+        "unit": "Hz"
+      }
+    }
+  },
+  "defcals": [
+    {
+      "gate": "x",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "amp": 0.2041,
+        "duration_s": 3.2e-8,
+        "motzoi": -0.11
+      }
+    },
+    {
+      "gate": "sx",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "amp": 0.1022,
+        "duration_s": 3.2e-8,
+        "motzoi": -0.11
+      }
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "amp": 0.0355,
+        "duration_s": 2.0000000000000003e-6
+      }
+    },
+    {
+      "gate": "x",
+      "qubits": [
+        "$1"
+      ],
+      "params": {
+        "amp": 0.2088,
+        "duration_s": 3.2e-8,
+        "motzoi": -0.09
+      }
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        "$1"
+      ],
+      "params": {
+        "amp": 0.0361,
+        "duration_s": 2.0000000000000003e-6
+      }
+    },
+    {
+      "gate": "cz",
+      "qubits": [
+        "$0",
+        "$1"
+      ],
+      "params": {
+        "amp": 0.6612,
+        "duration_s": 2.4000000000000003e-7
+      }
+    }
+  ],
+  "extensions": {
+    "quam": {
+      "__class__": "quam_libs.components.QuAM",
+      "qubits": {
+        "q0": {
+          "__class__": "quam_libs.components.Transmon",
+          "id": 0,
+          "f_01": 4821335012.0,
+          "anharmonicity": -201443900.0,
+          "T1": 0.00001822,
+          "T2ramsey": 0.000012044,
+          "T2echo": 0.00002498,
+          "xy": {
+            "__class__": "quam.components.channels.IQChannel",
+            "intermediate_frequency": -85000000.0,
+            "operations": {
+              "x180": {
+                "__class__": "quam.components.pulses.DragGaussianPulse",
+                "amplitude": 0.2041,
+                "length": 32,
+                "alpha": -0.11,
+                "sigma": 8
+              },
+              "x90": {
+                "__class__": "quam.components.pulses.DragGaussianPulse",
+                "amplitude": 0.1022,
+                "length": 32,
+                "alpha": -0.11,
+                "sigma": 8
+              }
+            }
+          },
+          "resonator": {
+            "__class__": "quam.components.channels.InOutIQChannel",
+            "frequency_converter_up": {
+              "LO_frequency": 6700000000.0
+            },
+            "intermediate_frequency": 10200000.0,
+            "operations": {
+              "readout": {
+                "__class__": "quam.components.pulses.SquareReadoutPulse",
+                "amplitude": 0.0355,
+                "length": 2000,
+                "integration_weights_angle": 0.0
+              }
+            }
+          }
+        },
+        "q1": {
+          "__class__": "quam_libs.components.Transmon",
+          "id": 1,
+          "f_01": 4902110553.0,
+          "anharmonicity": -198770100.0,
+          "T1": 0.00001599,
+          "T2ramsey": 9.87e-6,
+          "xy": {
+            "__class__": "quam.components.channels.IQChannel",
+            "intermediate_frequency": "#../../q0/xy/intermediate_frequency",
+            "operations": {
+              "x180": {
+                "__class__": "quam.components.pulses.DragGaussianPulse",
+                "amplitude": 0.2088,
+                "length": 32,
+                "alpha": -0.09,
+                "sigma": 8
+              }
+            }
+          },
+          "resonator": {
+            "__class__": "quam.components.channels.InOutIQChannel",
+            "frequency_converter_up": {
+              "LO_frequency": 6700000000.0
+            },
+            "intermediate_frequency": 11800000.0,
+            "operations": {
+              "readout": {
+                "__class__": "quam.components.pulses.SquareReadoutPulse",
+                "amplitude": 0.0361,
+                "length": 2000
+              }
+            }
+          }
+        }
+      },
+      "qubit_pairs": {
+        "q0_q1": {
+          "__class__": "quam_libs.components.TransmonPair",
+          "qubit_control": "#/qubits/q0",
+          "qubit_target": "#/qubits/q1",
+          "coupler": {
+            "__class__": "quam.components.channels.SingleChannel",
+            "operations": {
+              "cz": {
+                "__class__": "quam.components.pulses.SquarePulse",
+                "amplitude": 0.6612,
+                "length": 240
+              }
+            }
+          }
+        }
+      },
+      "wiring": {
+        "__class__": "quam.core.quam_classes.QuamDict",
+        "_note": "synthetic wiring, control-stack only"
+      }
+    }
+  }
+}

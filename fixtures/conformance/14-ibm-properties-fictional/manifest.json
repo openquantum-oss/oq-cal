@@ -1,0 +1,6 @@
+{
+  "source": "sources/ibm/synthetic_fictional_transmon2.json",
+  "importer": "ibm-properties",
+  "kwargs": {},
+  "description": "Fictional Qiskit BackendProperties dictionary: SI unit conversion, directed coupling, assignment error, and average gate error."
+}

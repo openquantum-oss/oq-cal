@@ -1,0 +1,3374 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "braket-device",
+    "num_qubits": 20,
+    "qubit_labels": {
+      "$0": "1",
+      "$1": "2",
+      "$2": "3",
+      "$3": "4",
+      "$4": "5",
+      "$5": "6",
+      "$6": "7",
+      "$7": "8",
+      "$8": "9",
+      "$9": "10",
+      "$10": "11",
+      "$11": "12",
+      "$12": "13",
+      "$13": "14",
+      "$14": "15",
+      "$15": "16",
+      "$16": "17",
+      "$17": "18",
+      "$18": "19",
+      "$19": "20"
+    },
+    "coupling_map": [
+      [
+        "$0",
+        "$1"
+      ],
+      [
+        "$0",
+        "$3"
+      ],
+      [
+        "$1",
+        "$0"
+      ],
+      [
+        "$1",
+        "$4"
+      ],
+      [
+        "$2",
+        "$3"
+      ],
+      [
+        "$2",
+        "$7"
+      ],
+      [
+        "$3",
+        "$0"
+      ],
+      [
+        "$3",
+        "$2"
+      ],
+      [
+        "$3",
+        "$4"
+      ],
+      [
+        "$3",
+        "$8"
+      ],
+      [
+        "$4",
+        "$1"
+      ],
+      [
+        "$4",
+        "$3"
+      ],
+      [
+        "$4",
+        "$5"
+      ],
+      [
+        "$4",
+        "$9"
+      ],
+      [
+        "$5",
+        "$4"
+      ],
+      [
+        "$5",
+        "$6"
+      ],
+      [
+        "$5",
+        "$10"
+      ],
+      [
+        "$6",
+        "$5"
+      ],
+      [
+        "$6",
+        "$11"
+      ],
+      [
+        "$7",
+        "$2"
+      ],
+      [
+        "$7",
+        "$8"
+      ],
+      [
+        "$7",
+        "$12"
+      ],
+      [
+        "$8",
+        "$3"
+      ],
+      [
+        "$8",
+        "$7"
+      ],
+      [
+        "$8",
+        "$9"
+      ],
+      [
+        "$8",
+        "$13"
+      ],
+      [
+        "$9",
+        "$4"
+      ],
+      [
+        "$9",
+        "$8"
+      ],
+      [
+        "$9",
+        "$10"
+      ],
+      [
+        "$9",
+        "$14"
+      ],
+      [
+        "$10",
+        "$5"
+      ],
+      [
+        "$10",
+        "$9"
+      ],
+      [
+        "$10",
+        "$11"
+      ],
+      [
+        "$10",
+        "$15"
+      ],
+      [
+        "$11",
+        "$6"
+      ],
+      [
+        "$11",
+        "$10"
+      ],
+      [
+        "$11",
+        "$16"
+      ],
+      [
+        "$12",
+        "$7"
+      ],
+      [
+        "$12",
+        "$13"
+      ],
+      [
+        "$13",
+        "$8"
+      ],
+      [
+        "$13",
+        "$12"
+      ],
+      [
+        "$13",
+        "$14"
+      ],
+      [
+        "$13",
+        "$17"
+      ],
+      [
+        "$14",
+        "$9"
+      ],
+      [
+        "$14",
+        "$13"
+      ],
+      [
+        "$14",
+        "$15"
+      ],
+      [
+        "$14",
+        "$18"
+      ],
+      [
+        "$15",
+        "$10"
+      ],
+      [
+        "$15",
+        "$14"
+      ],
+      [
+        "$15",
+        "$16"
+      ],
+      [
+        "$15",
+        "$19"
+      ],
+      [
+        "$16",
+        "$11"
+      ],
+      [
+        "$16",
+        "$15"
+      ],
+      [
+        "$17",
+        "$13"
+      ],
+      [
+        "$17",
+        "$18"
+      ],
+      [
+        "$18",
+        "$14"
+      ],
+      [
+        "$18",
+        "$17"
+      ],
+      [
+        "$18",
+        "$19"
+      ],
+      [
+        "$19",
+        "$15"
+      ],
+      [
+        "$19",
+        "$18"
+      ]
+    ]
+  },
+  "snapshot": {
+    "source": "aws-braket",
+    "source_schema": "braket.device_schema.standardized_gate_model_qpu_device_properties v1"
+  },
+  "qubits": {
+    "$0": {
+      "t1": {
+        "value": 0.000026136884458246837,
+        "unit": "s",
+        "std_error": 1.1410913829427858e-6
+      },
+      "t2": {
+        "value": 0.000010172940640482857,
+        "unit": "s",
+        "std_error": 1.2146445042153614e-6
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9886,
+          "unit": "dimensionless",
+          "std_error": 0.0010613599645461162,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.99,
+            0.01
+          ],
+          [
+            0.0128,
+            0.9872
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9993574115038416,
+            "unit": "dimensionless",
+            "std_error": 0.000016970903887102856,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$1": {
+      "t1": {
+        "value": 0.00002962023566521727,
+        "unit": "s",
+        "std_error": 2.753479476477681e-6
+      },
+      "t2": {
+        "value": 7.790062895364359e-6,
+        "unit": "s",
+        "std_error": 3.41731929945248e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9843,
+          "unit": "dimensionless",
+          "std_error": 0.0012370665857322429,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9942,
+            0.0058
+          ],
+          [
+            0.0256,
+            0.9744
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.99947742628953,
+            "unit": "dimensionless",
+            "std_error": 8.218282138639849e-6,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$2": {
+      "t1": {
+        "value": 0.00002707041203573547,
+        "unit": "s",
+        "std_error": 9.289106076108888e-7
+      },
+      "t2": {
+        "value": 9.828803359691662e-6,
+        "unit": "s",
+        "std_error": 1.5894677826277308e-6
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9831,
+          "unit": "dimensionless",
+          "std_error": 0.00128603307791491,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.986,
+            0.014
+          ],
+          [
+            0.0198,
+            0.9802
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9992881020654624,
+            "unit": "dimensionless",
+            "std_error": 0.000013239224344389902,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$3": {
+      "t1": {
+        "value": 0.00002452430491816199,
+        "unit": "s",
+        "std_error": 1.568001372566754e-6
+      },
+      "t2": {
+        "value": 8.609914898721532e-6,
+        "unit": "s",
+        "std_error": 5.456661848732869e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9886,
+          "unit": "dimensionless",
+          "std_error": 0.0010607066463164273,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9926,
+            0.0074
+          ],
+          [
+            0.0154,
+            0.9846
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9994879707775852,
+            "unit": "dimensionless",
+            "std_error": 0.000012853455674710952,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$4": {
+      "t1": {
+        "value": 0.00004195996873578423,
+        "unit": "s",
+        "std_error": 4.000579880578992e-6
+      },
+      "t2": {
+        "value": 8.947597796246076e-6,
+        "unit": "s",
+        "std_error": 5.183076077623416e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9747,
+          "unit": "dimensionless",
+          "std_error": 0.001562626843354964,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9836,
+            0.0164
+          ],
+          [
+            0.0342,
+            0.9658
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.999330193062866,
+            "unit": "dimensionless",
+            "std_error": 0.000020411882133948375,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$5": {
+      "t1": {
+        "value": 0.00004949959287094208,
+        "unit": "s",
+        "std_error": 3.1960271104688313e-6
+      },
+      "t2": {
+        "value": 8.930789201997867e-6,
+        "unit": "s",
+        "std_error": 5.931536979811137e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9795,
+          "unit": "dimensionless",
+          "std_error": 0.0014124146677989805,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9842,
+            0.0158
+          ],
+          [
+            0.0252,
+            0.9748
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9993925399164424,
+            "unit": "dimensionless",
+            "std_error": 0.0000239759388662336,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$6": {
+      "t1": {
+        "value": 0.00003656711990034908,
+        "unit": "s",
+        "std_error": 2.651174507119429e-6
+      },
+      "t2": {
+        "value": 6.928896813764364e-6,
+        "unit": "s",
+        "std_error": 1.7011868153017248e-6
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.973,
+          "unit": "dimensionless",
+          "std_error": 0.0016082843875259345,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.988,
+            0.012
+          ],
+          [
+            0.042,
+            0.958
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9977413782625522,
+            "unit": "dimensionless",
+            "std_error": 0.00022117401231809195,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$7": {
+      "t1": {
+        "value": 0.00002360541744407206,
+        "unit": "s",
+        "std_error": 2.0665010538874876e-6
+      },
+      "t2": {
+        "value": 8.547133795619714e-6,
+        "unit": "s",
+        "std_error": 5.247533709258769e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9852,
+          "unit": "dimensionless",
+          "std_error": 0.0012017983460528956,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.995,
+            0.005
+          ],
+          [
+            0.0246,
+            0.9754
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9994962693045631,
+            "unit": "dimensionless",
+            "std_error": 0.000019040303869804892,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$8": {
+      "t1": {
+        "value": 0.000042981755571835174,
+        "unit": "s",
+        "std_error": 3.20863563314474e-6
+      },
+      "t2": {
+        "value": 0.0000110782184291982,
+        "unit": "s",
+        "std_error": 6.844637755420963e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9705,
+          "unit": "dimensionless",
+          "std_error": 0.0016808977325085271,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9834,
+            0.0166
+          ],
+          [
+            0.0424,
+            0.9576
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.99889644662097,
+            "unit": "dimensionless",
+            "std_error": 0.000031800594997028014,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$9": {
+      "t1": {
+        "value": 0.00004474650761432634,
+        "unit": "s",
+        "std_error": 2.284089533422365e-6
+      },
+      "t2": {
+        "value": 0.000010526106853242995,
+        "unit": "s",
+        "std_error": 8.234226103349147e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9775,
+          "unit": "dimensionless",
+          "std_error": 0.001475435440593828,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9872,
+            0.0128
+          ],
+          [
+            0.0322,
+            0.9678
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9996626062131432,
+            "unit": "dimensionless",
+            "std_error": 0.000012054814549805092,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$10": {
+      "t1": {
+        "value": 0.00003930070620762523,
+        "unit": "s",
+        "std_error": 2.950279653233823e-6
+      },
+      "t2": {
+        "value": 8.553452969691067e-6,
+        "unit": "s",
+        "std_error": 5.538343985465081e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9843,
+          "unit": "dimensionless",
+          "std_error": 0.001240017158041671,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9892,
+            0.0108
+          ],
+          [
+            0.0206,
+            0.9794
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9988134881257298,
+            "unit": "dimensionless",
+            "std_error": 0.00003464111160223998,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$11": {
+      "t1": {
+        "value": 0.0000519794169165017,
+        "unit": "s",
+        "std_error": 3.5903305099104234e-6
+      },
+      "t2": {
+        "value": 0.00001397779218161829,
+        "unit": "s",
+        "std_error": 1.5538467286915234e-6
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9864,
+          "unit": "dimensionless",
+          "std_error": 0.0011569758707541194,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.986,
+            0.014
+          ],
+          [
+            0.0132,
+            0.9868
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9977900657923467,
+            "unit": "dimensionless",
+            "std_error": 0.00016072380552684617,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$12": {
+      "t1": {
+        "value": 0.00003989326383298116,
+        "unit": "s",
+        "std_error": 4.293872979091689e-6
+      },
+      "t2": {
+        "value": 0.00001245624457635054,
+        "unit": "s",
+        "std_error": 1.060739466568358e-6
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.983,
+          "unit": "dimensionless",
+          "std_error": 0.0012884917262976931,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9894,
+            0.0106
+          ],
+          [
+            0.0234,
+            0.9766
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9992507463029824,
+            "unit": "dimensionless",
+            "std_error": 0.000023600481650817823,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$13": {
+      "t1": {
+        "value": 0.00003835992330652248,
+        "unit": "s",
+        "std_error": 2.083182408858353e-6
+      },
+      "t2": {
+        "value": 5.86323630144443e-6,
+        "unit": "s",
+        "std_error": 4.183836193560022e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9879,
+          "unit": "dimensionless",
+          "std_error": 0.0010918027161345638,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9926,
+            0.0074
+          ],
+          [
+            0.0168,
+            0.9832
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9996202262512236,
+            "unit": "dimensionless",
+            "std_error": 0.000010432669348882618,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$14": {
+      "t1": {
+        "value": 0.000023878038988334775,
+        "unit": "s",
+        "std_error": 1.5532433651513746e-6
+      },
+      "t2": {
+        "value": 8.676758511444497e-6,
+        "unit": "s",
+        "std_error": 4.7423150673618443e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9741,
+          "unit": "dimensionless",
+          "std_error": 0.0015760523156784138,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.989,
+            0.011
+          ],
+          [
+            0.0408,
+            0.9592
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9990482347369524,
+            "unit": "dimensionless",
+            "std_error": 0.00002698751593610239,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$15": {
+      "t1": {
+        "value": 0.00004766628139909095,
+        "unit": "s",
+        "std_error": 1.6898526505445923e-6
+      },
+      "t2": {
+        "value": 8.455123748631003e-6,
+        "unit": "s",
+        "std_error": 4.873052920234916e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9737,
+          "unit": "dimensionless",
+          "std_error": 0.001594782629471168,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9738,
+            0.0262
+          ],
+          [
+            0.0264,
+            0.9736
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.999687260877754,
+            "unit": "dimensionless",
+            "std_error": 0.00001596803208888513,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$16": {
+      "t1": {
+        "value": 0.00005008866104308096,
+        "unit": "s",
+        "std_error": 3.6786085713248953e-6
+      },
+      "t2": {
+        "value": 0.000014452291675550398,
+        "unit": "s",
+        "std_error": 8.063674321896406e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9821,
+          "unit": "dimensionless",
+          "std_error": 0.0013220075435448576,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.987,
+            0.013
+          ],
+          [
+            0.0228,
+            0.9772
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9995473455750016,
+            "unit": "dimensionless",
+            "std_error": 0.00001430166943162011,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$17": {
+      "t1": {
+        "value": 0.00004293720122251267,
+        "unit": "s",
+        "std_error": 2.6722349340813625e-6
+      },
+      "t2": {
+        "value": 0.000010953212481136008,
+        "unit": "s",
+        "std_error": 7.441913376589689e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9872,
+          "unit": "dimensionless",
+          "std_error": 0.0011213171733278318,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9938,
+            0.0062
+          ],
+          [
+            0.0194,
+            0.9806
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.99954254165405,
+            "unit": "dimensionless",
+            "std_error": 0.000013601126477336548,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$18": {
+      "t1": {
+        "value": 0.00005164242394764598,
+        "unit": "s",
+        "std_error": 6.124029905527545e-6
+      },
+      "t2": {
+        "value": 9.110405665001876e-6,
+        "unit": "s",
+        "std_error": 4.865953493174975e-7
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9723,
+          "unit": "dimensionless",
+          "std_error": 0.0016352067336657412,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.974,
+            0.026
+          ],
+          [
+            0.0294,
+            0.9706
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.99970171766538,
+            "unit": "dimensionless",
+            "std_error": 0.000011350598263837924,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    },
+    "$19": {
+      "t1": {
+        "value": 0.00003960352771426364,
+        "unit": "s",
+        "std_error": 3.641824153705634e-6
+      },
+      "t2": {
+        "value": 0.00003094773534258393,
+        "unit": "s",
+        "std_error": 2.079931913891391e-6
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9882,
+          "unit": "dimensionless",
+          "std_error": 0.0010791238131378836,
+          "method": "readout",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.991,
+            0.009
+          ],
+          [
+            0.0146,
+            0.9854
+          ]
+        ]
+      },
+      "benchmarks": [
+        {
+          "protocol": "simultaneous_rb",
+          "fidelity": {
+            "value": 0.9996486413773644,
+            "unit": "dimensionless",
+            "std_error": 0.000013288110036089063,
+            "method": "simultaneous_rb"
+          }
+        }
+      ]
+    }
+  },
+  "gates": [
+    {
+      "name": "cz",
+      "qubits": [
+        "$0",
+        "$1"
+      ],
+      "fidelity": {
+        "value": 0.996169793691225,
+        "unit": "dimensionless",
+        "std_error": 0.00021561831506198772,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9908029593324924,
+            "unit": "dimensionless",
+            "std_error": 0.00012284434330079618,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$0",
+            "$1"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$1",
+        "$4"
+      ],
+      "fidelity": {
+        "value": 0.9963017361267044,
+        "unit": "dimensionless",
+        "std_error": 0.0001975313246047736,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9912129819168134,
+            "unit": "dimensionless",
+            "std_error": 0.0001121804943897006,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$1",
+            "$4"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$0",
+        "$3"
+      ],
+      "fidelity": {
+        "value": 0.9952714965752812,
+        "unit": "dimensionless",
+        "std_error": 0.00020724617996138492,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9888073655582156,
+            "unit": "dimensionless",
+            "std_error": 0.00011811060385673634,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$0",
+            "$3"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$2",
+        "$3"
+      ],
+      "fidelity": {
+        "value": 0.9792365188948526,
+        "unit": "dimensionless",
+        "std_error": 0.0012693541975087644,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9649322500380432,
+            "unit": "dimensionless",
+            "std_error": 0.0006715351529548604,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$2",
+            "$3"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$3",
+        "$4"
+      ],
+      "fidelity": {
+        "value": 0.9817822446238066,
+        "unit": "dimensionless",
+        "std_error": 0.0010028324382170162,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9710064500705324,
+            "unit": "dimensionless",
+            "std_error": 0.0005234879989120399,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$3",
+            "$4"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$3",
+        "$8"
+      ],
+      "fidelity": {
+        "value": 0.9680958612411488,
+        "unit": "dimensionless",
+        "std_error": 0.0019768988083385254,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9505670779052364,
+            "unit": "dimensionless",
+            "std_error": 0.0010233421383797209,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$3",
+            "$8"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$4",
+        "$5"
+      ],
+      "fidelity": {
+        "value": 0.9918082710990418,
+        "unit": "dimensionless",
+        "std_error": 0.00040476104011760066,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9842610993271604,
+            "unit": "dimensionless",
+            "std_error": 0.00022110725840945503,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$4",
+            "$5"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$5",
+        "$6"
+      ],
+      "fidelity": {
+        "value": 0.9904979371037698,
+        "unit": "dimensionless",
+        "std_error": 0.0004813107364789413,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9807101598989388,
+            "unit": "dimensionless",
+            "std_error": 0.0002659176774714057,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$5",
+            "$6"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$5",
+        "$10"
+      ],
+      "fidelity": {
+        "value": 0.9919384124842072,
+        "unit": "dimensionless",
+        "std_error": 0.00039728793740566066,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9830326715719934,
+            "unit": "dimensionless",
+            "std_error": 0.0002212702675969442,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$5",
+            "$10"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$2",
+        "$7"
+      ],
+      "fidelity": {
+        "value": 0.9950702780824742,
+        "unit": "dimensionless",
+        "std_error": 0.000226921355727394,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.988450898160973,
+            "unit": "dimensionless",
+            "std_error": 0.00012909935437690893,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$2",
+            "$7"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$7",
+        "$8"
+      ],
+      "fidelity": {
+        "value": 0.994712787975816,
+        "unit": "dimensionless",
+        "std_error": 0.0002446735763441386,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.987931812364635,
+            "unit": "dimensionless",
+            "std_error": 0.00013853199965919207,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$7",
+            "$8"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$7",
+        "$12"
+      ],
+      "fidelity": {
+        "value": 0.9970394545497624,
+        "unit": "dimensionless",
+        "std_error": 0.00014642667227536394,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.99196338952969,
+            "unit": "dimensionless",
+            "std_error": 0.00008502140711119958,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$7",
+            "$12"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$4",
+        "$9"
+      ],
+      "fidelity": {
+        "value": 0.988443226966511,
+        "unit": "dimensionless",
+        "std_error": 0.00050534016412876,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9812455520296488,
+            "unit": "dimensionless",
+            "std_error": 0.0002651255371096559,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$4",
+            "$9"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$8",
+        "$9"
+      ],
+      "fidelity": {
+        "value": 0.9881967909067894,
+        "unit": "dimensionless",
+        "std_error": 0.000640489682575083,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9763960440321124,
+            "unit": "dimensionless",
+            "std_error": 0.0003523522113094705,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$8",
+            "$9"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$9",
+        "$10"
+      ],
+      "fidelity": {
+        "value": 0.9897927425845426,
+        "unit": "dimensionless",
+        "std_error": 0.0005415121910213925,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.980619387095372,
+            "unit": "dimensionless",
+            "std_error": 0.00029488841730172994,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$9",
+            "$10"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$9",
+        "$14"
+      ],
+      "fidelity": {
+        "value": 0.988063236905982,
+        "unit": "dimensionless",
+        "std_error": 0.0006382870615350456,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9780625525861756,
+            "unit": "dimensionless",
+            "std_error": 0.0003449130736656364,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$9",
+            "$14"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$6",
+        "$11"
+      ],
+      "fidelity": {
+        "value": 0.9926891010955426,
+        "unit": "dimensionless",
+        "std_error": 0.00017726557007010605,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.989033651643314,
+            "unit": "dimensionless",
+            "std_error": 0.00026589835510515907,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$6",
+            "$11"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$10",
+        "$11"
+      ],
+      "fidelity": {
+        "value": 0.9972876047676184,
+        "unit": "dimensionless",
+        "std_error": 0.00030620746275805547,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.987343040856356,
+            "unit": "dimensionless",
+            "std_error": 0.0001921598008736419,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$10",
+            "$11"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$11",
+        "$16"
+      ],
+      "fidelity": {
+        "value": 0.9985558292810124,
+        "unit": "dimensionless",
+        "std_error": 0.00034746916271411225,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.991327760559102,
+            "unit": "dimensionless",
+            "std_error": 0.0002230782227030939,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$11",
+            "$16"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$8",
+        "$13"
+      ],
+      "fidelity": {
+        "value": 0.9943465216406951,
+        "unit": "dimensionless",
+        "std_error": 0.0005173471510493835,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9872793538794272,
+            "unit": "dimensionless",
+            "std_error": 0.00029215020277832145,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$8",
+            "$13"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$12",
+        "$13"
+      ],
+      "fidelity": {
+        "value": 0.9955359622166404,
+        "unit": "dimensionless",
+        "std_error": 0.00023851031372321108,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9905843893401168,
+            "unit": "dimensionless",
+            "std_error": 0.0001324177090642413,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$12",
+            "$13"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$13",
+        "$14"
+      ],
+      "fidelity": {
+        "value": 0.993824145288251,
+        "unit": "dimensionless",
+        "std_error": 0.000460789035169618,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9872940385649014,
+            "unit": "dimensionless",
+            "std_error": 0.0002554497918762961,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$13",
+            "$14"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$13",
+        "$17"
+      ],
+      "fidelity": {
+        "value": 0.9961623488879604,
+        "unit": "dimensionless",
+        "std_error": 0.0002279273015853763,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9916024771654828,
+            "unit": "dimensionless",
+            "std_error": 0.00012711987375045328,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$13",
+            "$17"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$10",
+        "$15"
+      ],
+      "fidelity": {
+        "value": 0.9941086350649512,
+        "unit": "dimensionless",
+        "std_error": 0.0004112493169457746,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9876152123328196,
+            "unit": "dimensionless",
+            "std_error": 0.00022900700338478113,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$10",
+            "$15"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$14",
+        "$15"
+      ],
+      "fidelity": {
+        "value": 0.996441705176587,
+        "unit": "dimensionless",
+        "std_error": 0.0001810912064397993,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9910944029194532,
+            "unit": "dimensionless",
+            "std_error": 0.00010390674563066107,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$14",
+            "$15"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$15",
+        "$16"
+      ],
+      "fidelity": {
+        "value": 0.9958877347433092,
+        "unit": "dimensionless",
+        "std_error": 0.00025909451443594016,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9916277537116656,
+            "unit": "dimensionless",
+            "std_error": 0.0001422345462706455,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$15",
+            "$16"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$15",
+        "$19"
+      ],
+      "fidelity": {
+        "value": 0.9968242727414832,
+        "unit": "dimensionless",
+        "std_error": 0.0002074334313765094,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9937029356270336,
+            "unit": "dimensionless",
+            "std_error": 0.00011163671170925152,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$15",
+            "$19"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$14",
+        "$18"
+      ],
+      "fidelity": {
+        "value": 0.9958434682988349,
+        "unit": "dimensionless",
+        "std_error": 0.000258932217663073,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.988760477312618,
+            "unit": "dimensionless",
+            "std_error": 0.00015115754985955493,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$14",
+            "$18"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$17",
+        "$18"
+      ],
+      "fidelity": {
+        "value": 0.9975847189950992,
+        "unit": "dimensionless",
+        "std_error": 0.00019004151827158147,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.9940545311772157,
+            "unit": "dimensionless",
+            "std_error": 0.00010698147579894978,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$17",
+            "$18"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$18",
+        "$19"
+      ],
+      "fidelity": {
+        "value": 0.9979356098360256,
+        "unit": "dimensionless",
+        "std_error": 0.000182886449675914,
+        "method": "simultaneous_interleaved_rb"
+      },
+      "benchmarks": [
+        {
+          "protocol": "two_qubit_clifford",
+          "fidelity": {
+            "value": 0.995061410807415,
+            "unit": "dimensionless",
+            "std_error": 0.00010141416628194824,
+            "method": "simultaneous_interleaved_rb"
+          },
+          "qubits": [
+            "$18",
+            "$19"
+          ]
+        }
+      ]
+    }
+  ],
+  "extensions": {
+    "braket": {
+      "braketSchemaHeader": {
+        "name": "braket.device_schema.standardized_gate_model_qpu_device_properties",
+        "version": "1"
+      },
+      "oneQubitProperties": {
+        "1": {
+          "T1": {
+            "value": 0.000026136884458246837,
+            "standardError": 1.1410913829427858e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.000010172940640482857,
+            "standardError": 1.2146445042153614e-6,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9993574115038416,
+              "standardError": 0.000016970903887102856
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.01
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0128
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9886,
+              "standardError": 0.0010613599645461162
+            }
+          ]
+        },
+        "2": {
+          "T1": {
+            "value": 0.00002962023566521727,
+            "standardError": 2.753479476477681e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 7.790062895364359e-6,
+            "standardError": 3.41731929945248e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99947742628953,
+              "standardError": 8.218282138639849e-6
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0058
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0256
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9843,
+              "standardError": 0.0012370665857322429
+            }
+          ]
+        },
+        "3": {
+          "T1": {
+            "value": 0.00002707041203573547,
+            "standardError": 9.289106076108888e-7,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 9.828803359691662e-6,
+            "standardError": 1.5894677826277308e-6,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9992881020654624,
+              "standardError": 0.000013239224344389902
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.014
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0198
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9831,
+              "standardError": 0.00128603307791491
+            }
+          ]
+        },
+        "4": {
+          "T1": {
+            "value": 0.00002452430491816199,
+            "standardError": 1.568001372566754e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.609914898721532e-6,
+            "standardError": 5.456661848732869e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9994879707775852,
+              "standardError": 0.000012853455674710952
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0074
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0154
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9886,
+              "standardError": 0.0010607066463164273
+            }
+          ]
+        },
+        "5": {
+          "T1": {
+            "value": 0.00004195996873578423,
+            "standardError": 4.000579880578992e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.947597796246076e-6,
+            "standardError": 5.183076077623416e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.999330193062866,
+              "standardError": 0.000020411882133948375
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0164
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0342
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9747,
+              "standardError": 0.001562626843354964
+            }
+          ]
+        },
+        "6": {
+          "T1": {
+            "value": 0.00004949959287094208,
+            "standardError": 3.1960271104688313e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.930789201997867e-6,
+            "standardError": 5.931536979811137e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9993925399164424,
+              "standardError": 0.0000239759388662336
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0158
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0252
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9795,
+              "standardError": 0.0014124146677989805
+            }
+          ]
+        },
+        "7": {
+          "T1": {
+            "value": 0.00003656711990034908,
+            "standardError": 2.651174507119429e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 6.928896813764364e-6,
+            "standardError": 1.7011868153017248e-6,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9977413782625522,
+              "standardError": 0.00022117401231809195
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.012
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.042
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.973,
+              "standardError": 0.0016082843875259345
+            }
+          ]
+        },
+        "8": {
+          "T1": {
+            "value": 0.00002360541744407206,
+            "standardError": 2.0665010538874876e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.547133795619714e-6,
+            "standardError": 5.247533709258769e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9994962693045631,
+              "standardError": 0.000019040303869804892
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.005
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0246
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9852,
+              "standardError": 0.0012017983460528956
+            }
+          ]
+        },
+        "9": {
+          "T1": {
+            "value": 0.000042981755571835174,
+            "standardError": 3.20863563314474e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.0000110782184291982,
+            "standardError": 6.844637755420963e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99889644662097,
+              "standardError": 0.000031800594997028014
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0166
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0424
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9705,
+              "standardError": 0.0016808977325085271
+            }
+          ]
+        },
+        "10": {
+          "T1": {
+            "value": 0.00004474650761432634,
+            "standardError": 2.284089533422365e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.000010526106853242995,
+            "standardError": 8.234226103349147e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9996626062131432,
+              "standardError": 0.000012054814549805092
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0128
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0322
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9775,
+              "standardError": 0.001475435440593828
+            }
+          ]
+        },
+        "11": {
+          "T1": {
+            "value": 0.00003930070620762523,
+            "standardError": 2.950279653233823e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.553452969691067e-6,
+            "standardError": 5.538343985465081e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9988134881257298,
+              "standardError": 0.00003464111160223998
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0108
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0206
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9843,
+              "standardError": 0.001240017158041671
+            }
+          ]
+        },
+        "12": {
+          "T1": {
+            "value": 0.0000519794169165017,
+            "standardError": 3.5903305099104234e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.00001397779218161829,
+            "standardError": 1.5538467286915234e-6,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9977900657923467,
+              "standardError": 0.00016072380552684617
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.014
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0132
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9864,
+              "standardError": 0.0011569758707541194
+            }
+          ]
+        },
+        "13": {
+          "T1": {
+            "value": 0.00003989326383298116,
+            "standardError": 4.293872979091689e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.00001245624457635054,
+            "standardError": 1.060739466568358e-6,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9992507463029824,
+              "standardError": 0.000023600481650817823
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0106
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0234
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.983,
+              "standardError": 0.0012884917262976931
+            }
+          ]
+        },
+        "14": {
+          "T1": {
+            "value": 0.00003835992330652248,
+            "standardError": 2.083182408858353e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 5.86323630144443e-6,
+            "standardError": 4.183836193560022e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9996202262512236,
+              "standardError": 0.000010432669348882618
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0074
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0168
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9879,
+              "standardError": 0.0010918027161345638
+            }
+          ]
+        },
+        "15": {
+          "T1": {
+            "value": 0.000023878038988334775,
+            "standardError": 1.5532433651513746e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.676758511444497e-6,
+            "standardError": 4.7423150673618443e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9990482347369524,
+              "standardError": 0.00002698751593610239
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.011
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0408
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9741,
+              "standardError": 0.0015760523156784138
+            }
+          ]
+        },
+        "16": {
+          "T1": {
+            "value": 0.00004766628139909095,
+            "standardError": 1.6898526505445923e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 8.455123748631003e-6,
+            "standardError": 4.873052920234916e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.999687260877754,
+              "standardError": 0.00001596803208888513
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0262
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0264
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9737,
+              "standardError": 0.001594782629471168
+            }
+          ]
+        },
+        "17": {
+          "T1": {
+            "value": 0.00005008866104308096,
+            "standardError": 3.6786085713248953e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.000014452291675550398,
+            "standardError": 8.063674321896406e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9995473455750016,
+              "standardError": 0.00001430166943162011
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.013
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0228
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9821,
+              "standardError": 0.0013220075435448576
+            }
+          ]
+        },
+        "18": {
+          "T1": {
+            "value": 0.00004293720122251267,
+            "standardError": 2.6722349340813625e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.000010953212481136008,
+            "standardError": 7.441913376589689e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99954254165405,
+              "standardError": 0.000013601126477336548
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.0062
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0194
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9872,
+              "standardError": 0.0011213171733278318
+            }
+          ]
+        },
+        "19": {
+          "T1": {
+            "value": 0.00005164242394764598,
+            "standardError": 6.124029905527545e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 9.110405665001876e-6,
+            "standardError": 4.865953493174975e-7,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.99970171766538,
+              "standardError": 0.000011350598263837924
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.026
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0294
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9723,
+              "standardError": 0.0016352067336657412
+            }
+          ]
+        },
+        "20": {
+          "T1": {
+            "value": 0.00003960352771426364,
+            "standardError": 3.641824153705634e-6,
+            "unit": "S"
+          },
+          "T2": {
+            "value": 0.00003094773534258393,
+            "standardError": 2.079931913891391e-6,
+            "unit": "S"
+          },
+          "oneQubitFidelity": [
+            {
+              "fidelityType": {
+                "name": "SIMULTANEOUS_RANDOMIZED_BENCHMARKING"
+              },
+              "fidelity": 0.9996486413773644,
+              "standardError": 0.000013288110036089063
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_0_TO_1"
+              },
+              "fidelity": 0.009
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT_ERROR_1_TO_0"
+              },
+              "fidelity": 0.0146
+            },
+            {
+              "fidelityType": {
+                "name": "READOUT"
+              },
+              "fidelity": 0.9882,
+              "standardError": 0.0010791238131378836
+            }
+          ]
+        }
+      },
+      "twoQubitProperties": {
+        "1-2": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.996169793691225,
+              "standardError": 0.00021561831506198772,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9908029593324924,
+              "standardError": 0.00012284434330079618,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "2-5": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9963017361267044,
+              "standardError": 0.0001975313246047736,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9912129819168134,
+              "standardError": 0.0001121804943897006,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "1-4": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9952714965752812,
+              "standardError": 0.00020724617996138492,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9888073655582156,
+              "standardError": 0.00011811060385673634,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "3-4": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9792365188948526,
+              "standardError": 0.0012693541975087644,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9649322500380432,
+              "standardError": 0.0006715351529548604,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "4-5": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9817822446238066,
+              "standardError": 0.0010028324382170162,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9710064500705324,
+              "standardError": 0.0005234879989120399,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "4-9": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9680958612411488,
+              "standardError": 0.0019768988083385254,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9505670779052364,
+              "standardError": 0.0010233421383797209,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "5-6": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9918082710990418,
+              "standardError": 0.00040476104011760066,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9842610993271604,
+              "standardError": 0.00022110725840945503,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "6-7": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9904979371037698,
+              "standardError": 0.0004813107364789413,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9807101598989388,
+              "standardError": 0.0002659176774714057,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "6-11": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9919384124842072,
+              "standardError": 0.00039728793740566066,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9830326715719934,
+              "standardError": 0.0002212702675969442,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "3-8": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9950702780824742,
+              "standardError": 0.000226921355727394,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.988450898160973,
+              "standardError": 0.00012909935437690893,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "8-9": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.994712787975816,
+              "standardError": 0.0002446735763441386,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.987931812364635,
+              "standardError": 0.00013853199965919207,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "8-13": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9970394545497624,
+              "standardError": 0.00014642667227536394,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.99196338952969,
+              "standardError": 0.00008502140711119958,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "5-10": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.988443226966511,
+              "standardError": 0.00050534016412876,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9812455520296488,
+              "standardError": 0.0002651255371096559,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "9-10": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9881967909067894,
+              "standardError": 0.000640489682575083,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9763960440321124,
+              "standardError": 0.0003523522113094705,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "10-11": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9897927425845426,
+              "standardError": 0.0005415121910213925,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.980619387095372,
+              "standardError": 0.00029488841730172994,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "10-15": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.988063236905982,
+              "standardError": 0.0006382870615350456,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9780625525861756,
+              "standardError": 0.0003449130736656364,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "7-12": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9926891010955426,
+              "standardError": 0.00017726557007010605,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.989033651643314,
+              "standardError": 0.00026589835510515907,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "11-12": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9972876047676184,
+              "standardError": 0.00030620746275805547,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.987343040856356,
+              "standardError": 0.0001921598008736419,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "12-17": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9985558292810124,
+              "standardError": 0.00034746916271411225,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.991327760559102,
+              "standardError": 0.0002230782227030939,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "9-14": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9943465216406951,
+              "standardError": 0.0005173471510493835,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9872793538794272,
+              "standardError": 0.00029215020277832145,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "13-14": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9955359622166404,
+              "standardError": 0.00023851031372321108,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9905843893401168,
+              "standardError": 0.0001324177090642413,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "14-15": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.993824145288251,
+              "standardError": 0.000460789035169618,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9872940385649014,
+              "standardError": 0.0002554497918762961,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "14-18": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9961623488879604,
+              "standardError": 0.0002279273015853763,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9916024771654828,
+              "standardError": 0.00012711987375045328,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "11-16": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9941086350649512,
+              "standardError": 0.0004112493169457746,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9876152123328196,
+              "standardError": 0.00022900700338478113,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "15-16": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.996441705176587,
+              "standardError": 0.0001810912064397993,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9910944029194532,
+              "standardError": 0.00010390674563066107,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "16-17": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9958877347433092,
+              "standardError": 0.00025909451443594016,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9916277537116656,
+              "standardError": 0.0001422345462706455,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "16-20": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9968242727414832,
+              "standardError": 0.0002074334313765094,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9937029356270336,
+              "standardError": 0.00011163671170925152,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "15-19": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9958434682988349,
+              "standardError": 0.000258932217663073,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.988760477312618,
+              "standardError": 0.00015115754985955493,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "18-19": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9975847189950992,
+              "standardError": 0.00019004151827158147,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.9940545311772157,
+              "standardError": 0.00010698147579894978,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        },
+        "19-20": {
+          "twoQubitGateFidelity": [
+            {
+              "gateName": "CZ",
+              "fidelity": 0.9979356098360256,
+              "standardError": 0.000182886449675914,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            },
+            {
+              "gateName": "Two_Qubit_Clifford",
+              "fidelity": 0.995061410807415,
+              "standardError": 0.00010141416628194824,
+              "fidelityType": {
+                "name": "SIMULTANEOUS_INTERLEAVED_RANDOMIZED_BENCHMARKING"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

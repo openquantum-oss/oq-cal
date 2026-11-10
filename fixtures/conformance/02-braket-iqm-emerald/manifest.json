@@ -1,0 +1,6 @@
+{
+  "source": "sources/braket/raw_iqm-emerald.json",
+  "importer": "braket",
+  "kwargs": {},
+  "description": "AWS Braket standardized device properties, IQM Emerald (per-qubit, 54 qubits; 1-based source remapped to 0-based)."
+}

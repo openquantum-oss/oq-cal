@@ -1,0 +1,200 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "synthetic:acme.transmon-8-full",
+    "vendor": "Acme",
+    "model": "acme-transmon-8",
+    "num_qubits": 8,
+    "qubit_labels": {
+      "$0": "qA0",
+      "$1": "qA1"
+    },
+    "enabled_qubits": [
+      "$0",
+      "$1"
+    ]
+  },
+  "snapshot": {
+    "id": "sha256:cafef00d",
+    "captured_at": "2026-09-02T11:20:05.512300+00:00",
+    "source": "synthetic-cal",
+    "source_schema": "synthetic.snapshot/0.x"
+  },
+  "aggregates": {
+    "qubits": {
+      "t1": {
+        "value": 1.71e-05,
+        "unit": "s"
+      }
+    },
+    "gates_1q": {
+      "fidelity": {
+        "value": 0.9988,
+        "unit": "dimensionless",
+        "method": "rb"
+      }
+    }
+  },
+  "qubits": {
+    "$0": {
+      "t1": {
+        "value": 1.822e-05,
+        "unit": "s",
+        "err_minus": 8.2e-07,
+        "err_plus": 9.1e-07,
+        "status": "good",
+        "updated_at": "2026-09-01T20:04:02+00:00"
+      },
+      "t2": {
+        "value": 1.2044e-05,
+        "unit": "s",
+        "status": "approximate"
+      },
+      "frequency_01": {
+        "value": 4821335012.44,
+        "unit": "Hz",
+        "err_minus": 5120.0,
+        "err_plus": 5120.0,
+        "status": "good"
+      },
+      "anharmonicity": {
+        "value": -201443900.0,
+        "unit": "Hz"
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9445,
+          "unit": "dimensionless"
+        },
+        "confusion_matrix": [
+          [
+            0.961,
+            0.039
+          ],
+          [
+            0.072,
+            0.928
+          ]
+        ],
+        "classifier": {
+          "type": "linear_iq",
+          "projection": [
+            -48.113,
+            -5.902
+          ],
+          "threshold": 0.2041,
+          "status": "calibrated"
+        }
+      }
+    },
+    "$1": {
+      "t1": {
+        "value": 1.599e-05,
+        "unit": "s",
+        "status": "good"
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.9335,
+          "unit": "dimensionless"
+        },
+        "confusion_matrix": [
+          [
+            0.948,
+            0.052
+          ],
+          [
+            0.081,
+            0.919
+          ]
+        ]
+      }
+    }
+  },
+  "gates": [
+    {
+      "name": "x",
+      "qubits": [
+        "$0"
+      ],
+      "error": {
+        "value": 0.00088,
+        "unit": "dimensionless",
+        "status": "good"
+      }
+    },
+    {
+      "name": "cz",
+      "qubits": [
+        "$0",
+        "$1"
+      ],
+      "error": {
+        "value": 0.0121,
+        "unit": "dimensionless",
+        "status": "approximate"
+      }
+    }
+  ],
+  "defcals": [
+    {
+      "gate": "x",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 3.2e-08,
+        "amp": 0.2041,
+        "motzoi": -0.11,
+        "frequency_hz": 4821335012.0
+      }
+    },
+    {
+      "gate": "sx",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 3.2e-08,
+        "amp": 0.1022,
+        "motzoi": -0.11,
+        "frequency_hz": 4821335012.0
+      }
+    },
+    {
+      "gate": "cz",
+      "qubits": [
+        "$0",
+        "$1"
+      ],
+      "params": {
+        "duration_s": 2.4e-07,
+        "amp": 0.6612,
+        "frequency_hz": 4861000000.0
+      }
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 2e-06,
+        "amp": 0.0355,
+        "frequency_hz": 6710200000.0,
+        "integration_time_s": 1.8e-06
+      }
+    }
+  ],
+  "extensions": {
+    "edge_snapshot": {
+      "controller_info": {
+        "vendor": "synthetic"
+      },
+      "note": "verbatim source preserved here"
+    }
+  }
+}

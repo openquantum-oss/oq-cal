@@ -1,0 +1,48 @@
+{
+  "_note": "Fictional BackendProperties dictionary. Not a real IBM backend.",
+  "backend_name": "fictional-transmon-2",
+  "backend_version": "0.0.0",
+  "last_update_date": "2026-06-01T12:00:00Z",
+  "qubits": [
+    [
+      {
+        "name": "T1",
+        "value": 20.0,
+        "unit": "us",
+        "date": "2026-06-01 00:00:00+00:00"
+      },
+      { "name": "T2", "value": 15.0, "unit": "us" },
+      { "name": "frequency", "value": 4.5, "unit": "GHz" },
+      { "name": "anharmonicity", "value": -0.25, "unit": "GHz" },
+      { "name": "readout_error", "value": 0.02, "unit": "" },
+      { "name": "prob_meas1_prep0", "value": 0.25, "unit": "" },
+      { "name": "prob_meas0_prep1", "value": 0.5, "unit": "" },
+      { "name": "readout_length", "value": 1000.0, "unit": "ns" }
+    ],
+    [
+      { "name": "T1", "value": 10.0, "unit": "us" },
+      { "name": "readout_error", "value": 0.05, "unit": "" }
+    ]
+  ],
+  "gates": [
+    {
+      "gate": "x",
+      "name": "x0",
+      "qubits": [0],
+      "parameters": [
+        { "name": "gate_error", "value": 0.0004, "unit": "" },
+        { "name": "gate_length", "value": 32.0, "unit": "ns" }
+      ]
+    },
+    {
+      "gate": "cx",
+      "name": "cx0_1",
+      "qubits": [0, 1],
+      "parameters": [
+        { "name": "gate_error", "value": 0.008, "unit": "" },
+        { "name": "gate_length", "value": 200.0, "unit": "ns" }
+      ]
+    }
+  ],
+  "general": []
+}

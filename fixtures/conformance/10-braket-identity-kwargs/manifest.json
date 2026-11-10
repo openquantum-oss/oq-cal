@@ -1,0 +1,12 @@
+{
+  "source": "sources/braket/raw_iqm-garnet.json",
+  "importer": "braket",
+  "kwargs": {
+    "device_id": "aws:iqm.garnet",
+    "vendor": "IQM",
+    "model": "Garnet",
+    "captured_at": "2026-10-31T00:00:00+00:00",
+    "snapshot_id": "demo-0001"
+  },
+  "description": "IQM Garnet with convert-time identity/provenance kwargs (device_id/vendor/model/captured_at/snapshot_id) \u2014 exercises the importer identity override path."
+}

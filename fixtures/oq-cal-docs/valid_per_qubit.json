@@ -1,0 +1,60 @@
+{
+  "oq-cal": { "name": "oq-cal.device_calibration", "version": "0.1" },
+  "device": {
+    "id": "synthetic:acme.transmon-8",
+    "vendor": "Acme",
+    "model": "acme-transmon-8",
+    "num_qubits": 8,
+    "qubit_labels": { "$0": "qA0", "$1": "qA1" },
+    "enabled_qubits": ["$0", "$1"],
+    "coupling_map": [["$0", "$1"], ["$1", "$0"]]
+  },
+  "snapshot": {
+    "id": "sha256:deadbeef",
+    "captured_at": "2026-09-02T11:20:05+00:00",
+    "source": "synthetic",
+    "source_schema": "synthetic.per_qubit/1"
+  },
+  "qubits": {
+    "$0": {
+      "t1": { "value": 1.822e-05, "unit": "s", "err_minus": 8.2e-07, "err_plus": 9.1e-07, "status": "good", "updated_at": "2026-09-01T20:04:02+00:00" },
+      "t2": { "value": 1.2044e-05, "unit": "s", "status": "approximate" },
+      "t2_echo": { "value": 2.498e-05, "unit": "s", "status": "good" },
+      "frequency_01": { "value": 4821335012.44, "unit": "Hz", "err_minus": 5120.0, "err_plus": 5120.0, "status": "good" },
+      "anharmonicity": { "value": -201443900.0, "unit": "Hz", "status": "good" },
+      "readout": {
+        "fidelity": { "value": 0.9445, "unit": "dimensionless", "method": "confusion_matrix_diagonal" },
+        "confusion_matrix": [[0.961, 0.039], [0.072, 0.928]],
+        "classifier": { "type": "linear_iq", "projection": [-48.113, -5.902], "threshold": 0.2041, "status": "calibrated" }
+      },
+      "benchmarks": [
+        { "protocol": "rb", "fidelity": { "value": 0.9991, "unit": "dimensionless", "std_error": 0.00012 } }
+      ]
+    },
+    "$1": {
+      "t1": { "value": 1.599e-05, "unit": "s", "status": "good" },
+      "frequency_01": { "value": 4902110553.07, "unit": "Hz", "status": "good" },
+      "readout": {
+        "fidelity": { "value": 0.9335, "unit": "dimensionless" },
+        "confusion_matrix": [[0.948, 0.052], [0.081, 0.919]]
+      }
+    }
+  },
+  "gates": [
+    {
+      "name": "x",
+      "qubits": ["$0"],
+      "error": { "value": 0.00088, "unit": "dimensionless", "status": "good" },
+      "duration": { "value": 3.2e-08, "unit": "s" }
+    },
+    {
+      "name": "cz",
+      "qubits": ["$0", "$1"],
+      "error": { "value": 0.0121, "unit": "dimensionless", "status": "approximate" },
+      "duration": { "value": 2.4e-07, "unit": "s" },
+      "benchmarks": [
+        { "protocol": "interleaved_rb", "fidelity": { "value": 0.9879, "unit": "dimensionless", "std_error": 0.0021 } }
+      ]
+    }
+  ]
+}

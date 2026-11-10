@@ -1,0 +1,36 @@
+{
+  "name": "@openquantum-oss/oq-cal",
+  "version": "0.1.0",
+  "description": "TypeScript reference implementation of the oq-cal device-calibration interchange format (validate, canonical JSON, diff, and converters).",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^15.0.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

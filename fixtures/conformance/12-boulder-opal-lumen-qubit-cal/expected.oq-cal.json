@@ -1,0 +1,257 @@
+{
+  "oq-cal": {
+    "name": "oq-cal.device_calibration",
+    "version": "0.1"
+  },
+  "device": {
+    "id": "lumen-demo-4",
+    "model": "lumen-demo-4",
+    "num_qubits": 3,
+    "qubit_labels": {
+      "$0": "q0",
+      "$1": "q1",
+      "$2": "q2"
+    },
+    "enabled_qubits": [
+      "$0",
+      "$1"
+    ]
+  },
+  "snapshot": {
+    "captured_at": "2026-04-15T09:30:00+00:00",
+    "source": "boulder-opal",
+    "source_schema": "boulder-opal-snapshot"
+  },
+  "qubits": {
+    "$0": {
+      "t1": {
+        "value": 0.00004,
+        "unit": "s",
+        "err_minus": 1e-6,
+        "err_plus": 1e-6,
+        "status": "approximate",
+        "updated_at": "2026-04-15T09:00:00+00:00"
+      },
+      "frequency_01": {
+        "value": 4600000000.0,
+        "unit": "Hz",
+        "err_minus": 1000.0,
+        "err_plus": 1000.0,
+        "status": "good",
+        "updated_at": "2026-04-15T09:00:00+00:00"
+      },
+      "readout": {
+        "fidelity": {
+          "value": 0.825,
+          "unit": "dimensionless",
+          "method": "confusion_matrix_diagonal",
+          "metric": "readout_fidelity"
+        },
+        "confusion_matrix": [
+          [
+            0.9,
+            0.1
+          ],
+          [
+            0.25,
+            0.75
+          ]
+        ],
+        "classifier": {
+          "type": "linear_iq",
+          "projection": [
+            1.0,
+            -1.0
+          ],
+          "threshold": 0.5,
+          "status": "calibrated"
+        }
+      }
+    },
+    "$2": {
+      "t1": {
+        "value": 0.000011,
+        "unit": "s",
+        "err_minus": 2e-7,
+        "err_plus": 2e-7,
+        "status": "good"
+      },
+      "frequency_01": {
+        "value": 4700000000.0,
+        "unit": "Hz"
+      }
+    }
+  },
+  "defcals": [
+    {
+      "gate": "x",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 4e-8,
+        "amp": 0.25,
+        "motzoi": 0.04,
+        "frequency_hz": 4600000000.0
+      }
+    },
+    {
+      "gate": "measure",
+      "qubits": [
+        "$0"
+      ],
+      "params": {
+        "duration_s": 2e-6,
+        "amp": 0.04,
+        "frequency_hz": 7100000000.0,
+        "integration_time_s": 1e-6,
+        "role": "readout",
+        "program": "OPENQASM 3.0; // fictional"
+      }
+    }
+  ],
+  "extensions": {
+    "boulder_opal": {
+      "_note": "FICTIONAL fixture. Invented values for the Boulder Opal importer. Not a real device.",
+      "version": "2026-04-15 09:30:00+00:00",
+      "qpu_model": "lumen-demo-4",
+      "enabled_qubits": [
+        "q0",
+        "q2"
+      ],
+      "qubit_cal": [
+        {
+          "qubit": "q0",
+          "operational": true,
+          "frequency": {
+            "value": 4600000000.0,
+            "unit": "Hz",
+            "error_minus": 1000.0,
+            "error_plus": 1000.0,
+            "last_calibrated": "2026-04-15 09:00:00+00:00"
+          },
+          "anharmonicity": null,
+          "t1": {
+            "value": 0.00004,
+            "unit": "s",
+            "error_minus": 1e-6,
+            "error_plus": 1e-6,
+            "last_calibrated": "2026-04-15 09:00:00+00:00"
+          },
+          "t2": null,
+          "t2_echo": null
+        },
+        {
+          "qubit": "q1",
+          "operational": true,
+          "frequency": null,
+          "anharmonicity": null,
+          "t1": null,
+          "t2": null,
+          "t2_echo": null
+        },
+        {
+          "qubit": "q2",
+          "operational": false,
+          "frequency": {
+            "value": 4700000000.0,
+            "unit": "Hz"
+          },
+          "anharmonicity": null,
+          "t1": {
+            "value": 0.000011,
+            "unit": "s",
+            "error_minus": 2e-7,
+            "error_plus": 2e-7
+          },
+          "t2": null,
+          "t2_echo": null
+        }
+      ],
+      "components": {
+        "q0": {
+          "dtype": "transmon",
+          "freq_01": {
+            "value": 4400000000.0,
+            "calibration_status": "good"
+          },
+          "t1": {
+            "value": {
+              "value": 1000,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "calibration_status": "approximate",
+            "updated_at": "2026-04-15 08:00:00+00:00"
+          }
+        },
+        "q1": {
+          "dtype": "transmon",
+          "t1": {
+            "value": {
+              "value": 50000,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "calibration_status": "good"
+          }
+        },
+        "q2": {
+          "dtype": "transmon",
+          "t1": {
+            "value": {
+              "value": 1000,
+              "unit": "ns",
+              "dtype": "duration"
+            },
+            "calibration_status": "good"
+          }
+        },
+        "r0": {
+          "dtype": "resonator",
+          "kappa_low": 500000.0
+        }
+      },
+      "classifiers": {
+        "q0": {
+          "projection": [
+            1.0,
+            -1.0
+          ],
+          "threshold": 0.5,
+          "confusion_matrix": [
+            [
+              0.9,
+              0.25
+            ],
+            [
+              0.1,
+              0.75
+            ]
+          ],
+          "status": "calibrated"
+        }
+      },
+      "defcals": {
+        "x:q0": {
+          "duration": 4e-8,
+          "amp": 0.25,
+          "motzoi": 0.04,
+          "frequency": 7100000000.0
+        },
+        "measure:q0": {
+          "duration": 2e-6,
+          "amp": 0.04,
+          "frequency": 7100000000.0,
+          "integration_time": 1e-6,
+          "role": "readout",
+          "program": "OPENQASM 3.0; // fictional"
+        }
+      },
+      "controller_info": {
+        "vendor": "fictional",
+        "firmware": "0.0.0-fixture"
+      }
+    }
+  }
+}

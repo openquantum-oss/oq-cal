@@ -1,0 +1,6 @@
+{
+  "source": "sources/boulder-opal/synthetic_lumen_components.json",
+  "importer": "boulder-opal",
+  "kwargs": {},
+  "description": "Fictional Boulder Opal snapshot with no qubit_cal: duration-shaped error bars, a column-stochastic confusion matrix, readout tone on x/sx, and a measured qubit that stays on the roster while disabled."
+}

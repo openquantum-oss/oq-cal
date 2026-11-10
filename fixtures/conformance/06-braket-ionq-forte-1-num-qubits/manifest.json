@@ -1,0 +1,8 @@
+{
+  "source": "sources/braket/raw_ionq-forte-1.json",
+  "importer": "braket",
+  "kwargs": {
+    "num_qubits": 36
+  },
+  "description": "IonQ Forte-1 with num_qubits=36 supplied via kwargs \u2014 exercises importer kwarg handling in conformance."
+}
