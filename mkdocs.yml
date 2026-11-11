@@ -2,11 +2,11 @@ site_name: Open Quantum Calibration Standard (oq-cal)
 site_description: >-
   A vendor-neutral, JSON-native interchange format for QPU calibration and
   characterization data.
-site_url: https://openquantum-oss.github.io/oq-cal-staging/
+site_url: https://openquantum-oss.github.io/oq-cal/
 site_author: Quantum Rings
 
-repo_name: openquantum-oss/oq-cal-staging
-repo_url: https://github.com/openquantum-oss/oq-cal-staging
+repo_name: openquantum-oss/oq-cal
+repo_url: https://github.com/openquantum-oss/oq-cal
 edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2026 Quantum Rings — Apache-2.0
@@ -102,7 +102,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/openquantum-oss/oq-cal-staging
+      link: https://github.com/openquantum-oss/oq-cal
 
 nav:
   - Home: index.md

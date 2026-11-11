@@ -101,10 +101,8 @@ mkdocs build --strict                    # must pass with no warnings
 ```
 
 `mkdocs build --strict` must pass (no broken links or nav warnings). On pushes to `main`
-that touch `docs/**`, `spec/**`, `mkdocs.yml`, or `python/src/**`,
-`.github/workflows/docs.yml` builds the site; the GitHub Pages deploy step only runs when
-the `DEPLOY_DOCS` repository variable is set to `true` (Pages is unavailable while the
-repo is private).
+that touch `docs/**`, `spec/**`, `mkdocs.yml`, `python/src/**`, or the workflow file,
+`.github/workflows/docs.yml` builds the site and deploys it to GitHub Pages.
 
 ## PR flow
 

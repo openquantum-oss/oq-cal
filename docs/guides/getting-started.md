@@ -9,8 +9,8 @@ Clone the repository and install the Python library in editable mode. The refere
 library lives under `python/`; run packaging commands from there.
 
 ```bash
-git clone https://github.com/openquantum-oss/oq-cal-staging.git
-cd oq-cal-staging/python
+git clone https://github.com/openquantum-oss/oq-cal.git
+cd oq-cal/python
 
 python -m venv .venv
 source .venv/bin/activate
