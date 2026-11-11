@@ -95,5 +95,5 @@ git diff ../fixtures/conformance               # review every changed value
     converter change with unregenerated vectors will not merge. If a diff looks wrong, fix
     the converter rather than committing the vector.
 
-See [CONTRIBUTING.md](https://github.com/openquantum-oss/oq-cal-staging/blob/main/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/openquantum-oss/oq-cal/blob/main/CONTRIBUTING.md)
 for the spec-change policy and [TypeScript](typescript.md) for the second implementation.

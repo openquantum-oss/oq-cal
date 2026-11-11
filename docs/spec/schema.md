@@ -9,7 +9,7 @@ everything structural.
 
 - **Draft:** JSON Schema 2020-12
 - **Spec version:** 0.1
-- **Raw file:** [`spec/schema/oq-cal-0.1.schema.json`](https://github.com/openquantum-oss/oq-cal-staging/blob/main/spec/schema/oq-cal-0.1.schema.json)
+- **Raw file:** [`spec/schema/oq-cal-0.1.schema.json`](https://github.com/openquantum-oss/oq-cal/blob/main/spec/schema/oq-cal-0.1.schema.json)
 
 ## Copies of the schema
 

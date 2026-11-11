@@ -9,7 +9,7 @@ and a TypeScript port, with converters to and from the formats in common use tod
 
 [Get started](guides/getting-started.md){ .md-button .md-button--primary }
 [Read the spec](spec/introduction.md){ .md-button }
-[View on GitHub](https://github.com/openquantum-oss/oq-cal-staging){ .md-button }
+[View on GitHub](https://github.com/openquantum-oss/oq-cal){ .md-button }
 
 ## What an oq-cal document looks like
 
@@ -104,4 +104,4 @@ optional error bars, `median`, `method`, and `status`. Only `oq-cal`, `device`, 
 ## License
 
 Apache-2.0. Copyright 2026 Quantum Rings. See
-[`LICENSE`](https://github.com/openquantum-oss/oq-cal-staging/blob/main/LICENSE).
+[`LICENSE`](https://github.com/openquantum-oss/oq-cal/blob/main/LICENSE).

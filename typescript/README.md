@@ -17,7 +17,7 @@ npm install
 npm run build   # emits dist/
 ```
 
-Then depend on it locally (e.g. `npm install /path/to/oq-cal-staging/typescript`) or import from a
+Then depend on it locally (e.g. `npm install /path/to/oq-cal/typescript`) or import from a
 workspace.
 
 ## API
