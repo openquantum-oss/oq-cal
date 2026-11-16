@@ -132,8 +132,9 @@ Usage: oq-cal summary [OPTIONS] FILE
 Reports the populated sections and the worst/best coherence, readout, and gate numbers.
 Fields the source does not carry render as `?`. Datums flagged `status: "bad"` or
 `"unmeasured"` are excluded from the best/worst extremes (their value is a placeholder,
-not a measurement); when any are present, a line such as `unmeasured: 4 qubits, 29 gate
-entries` reports the count instead.
+not a measurement). A line such as `unmeasured: 8 benchmarks, 29 gate entries`
+counts those placeholders. A qubit is included in that line only when its
+coherence and readout are themselves unmeasured.
 
 ```bash
 oq-cal summary garnet.oq-cal.json

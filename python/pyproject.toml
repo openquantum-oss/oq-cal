@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "oq-cal"
-version = "0.1.0"
+version = "0.1.1"
 description = "A vendor-neutral JSON interchange format for QPU calibration and characterization data"
 # The canonical README and LICENSE live at the monorepo root; hatchling requires
 # metadata file references to stay within this project dir, so the long

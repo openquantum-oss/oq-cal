@@ -383,8 +383,8 @@ def summary(file: str) -> None:
         sections.append(f"defcals({len(doc.defcals)})")
     lines.append("sections: " + (", ".join(sections) or "none"))
 
-    # Per-qubit T1/T2/readout ranges. Dead (bad/unmeasured) datums carry a
-    # placeholder value and are excluded from best/worst (spec §2).
+    # Per-qubit T1/T2/readout ranges. Unmeasured datums carry a placeholder
+    # value and are excluded from best/worst (spec §2).
     if doc.qubits:
         _range_line(lines, "T1", doc, lambda p: p.t1)
         _range_line(lines, "T2", doc, lambda p: p.t2 or p.t2_echo)
@@ -393,7 +393,7 @@ def summary(file: str) -> None:
             lambda p: p.readout.fidelity if p.readout else None,
         )
 
-    # Gate fidelity/error ranges, excluding dead gate entries.
+    # Gate fidelity/error ranges, excluding unmeasured gate entries.
     gate_errs = []
     for g in doc.gates or []:
         if g.error is not None and not _is_dead(g.error):
@@ -404,23 +404,33 @@ def summary(file: str) -> None:
         vals = [v for _, v in gate_errs]
         lines.append(f"gate_err: min {min(vals):.3g}  max {max(vals):.3g}  (n={len(vals)})")
 
-    # Dead-element count line (only when nonzero).
-    dead_qubits = 0
+    # A qubit is unmeasured only when its coherence and readout are themselves
+    # placeholders. An unmeasured benchmark on a live qubit is one missing
+    # experiment (a rotating RB subset), not a dead qubit.
+    unmeasured_qubits = 0
+    unmeasured_benchmarks = 0
     for props in (doc.qubits or {}).values():
-        datums = [props.t1, props.t2, props.t2_echo]
+        body = [props.t1, props.t2, props.t2_echo]
         if props.readout is not None:
-            datums.append(props.readout.fidelity)
-        for bm in props.benchmarks or []:
-            datums.append(bm.fidelity)
-        if any(_is_dead(d) for d in datums):
-            dead_qubits += 1
-    dead_gates = sum(
-        1 for g in doc.gates or [] if _is_dead(g.error) or _is_dead(g.fidelity)
+            body.append(props.readout.fidelity)
+        present = [datum for datum in body if datum is not None]
+        if present and all(_is_dead(datum) for datum in present):
+            unmeasured_qubits += 1
+        for benchmark in props.benchmarks or []:
+            if _is_dead(benchmark.fidelity) or _is_dead(benchmark.error):
+                unmeasured_benchmarks += 1
+    unmeasured_gates = sum(
+        1 for gate in doc.gates or [] if _is_dead(gate.error) or _is_dead(gate.fidelity)
     )
-    if dead_qubits or dead_gates:
-        lines.append(
-            f"unmeasured: {dead_qubits} qubits, {dead_gates} gate entries"
-        )
+    parts: list[str] = []
+    if unmeasured_qubits:
+        parts.append(f"{unmeasured_qubits} qubits")
+    if unmeasured_benchmarks:
+        parts.append(f"{unmeasured_benchmarks} benchmarks")
+    if unmeasured_gates:
+        parts.append(f"{unmeasured_gates} gate entries")
+    if parts:
+        lines.append("unmeasured: " + ", ".join(parts))
 
     click.echo("\n".join(lines))
 

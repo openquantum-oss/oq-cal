@@ -64,6 +64,12 @@ def _as_int(value: Any) -> Optional[int]:
 
 
 def _collect_indices(payload: dict) -> set[int]:
+    """Logical qubit indices from the connectivity graph and standardized tables.
+
+    Pulse-frame ``qubitMappings`` are not part of this set. On Cepheus those ids
+    run through coupler and unused-transmon component numbers (up to 302) while
+    the logical roster stops at 107. Folding them in made ``num_qubits`` 303.
+    """
     indices: set[int] = set()
     paradigm = payload.get("paradigm") if isinstance(payload.get("paradigm"), dict) else {}
     graph = (paradigm.get("connectivity") or {}) if isinstance(paradigm, dict) else {}
@@ -78,16 +84,6 @@ def _collect_indices(payload: dict) -> set[int]:
                     dst = _as_int(raw_dst)
                     if dst is not None:
                         indices.add(dst)
-    frames = (payload.get("pulse") or {}) if isinstance(payload.get("pulse"), dict) else {}
-    frames = frames.get("frames") if isinstance(frames, dict) else None
-    if isinstance(frames, dict):
-        for frame in frames.values():
-            if not isinstance(frame, dict):
-                continue
-            for qubit in frame.get("qubitMappings") or []:
-                idx = _as_int(qubit)
-                if idx is not None:
-                    indices.add(idx)
     standardized = payload.get("standardized")
     if isinstance(standardized, dict):
         for key in standardized.get("oneQubitProperties") or {}:
@@ -152,6 +148,22 @@ def _graph_edges(payload: dict, shift: int) -> set[tuple[int, int]]:
                 continue
             edges.add((src - shift, dst - shift))
     return edges
+
+
+def _in_roster(qubits: list[str], num_qubits: Optional[int]) -> bool:
+    """True when every ``$n`` is inside the logical roster.
+
+    A missing count does not reject the frame. Component ids that sit past the
+    roster (Cepheus couplers) do.
+    """
+    if num_qubits is None:
+        return True
+    for ref in qubits:
+        if not ref.startswith("$") or not ref[1:].isdigit():
+            return False
+        if int(ref[1:]) >= num_qubits:
+            return False
+    return True
 
 
 def _pulse_defcals(payload: dict, shift: int) -> list[Defcal]:
@@ -307,7 +319,11 @@ def from_braket_rigetti(
     if shift and indices:
         device.qubit_labels = {f"${idx - shift}": str(idx) for idx in sorted(indices)}
 
-    defcals = _pulse_defcals(payload, shift)
+    defcals = [
+        item
+        for item in _pulse_defcals(payload, shift)
+        if _in_roster(item.qubits, device.num_qubits)
+    ]
     if defcals:
         doc.defcals = list(doc.defcals or []) + defcals
     _fill_specs_standard_errors(doc, payload, shift)

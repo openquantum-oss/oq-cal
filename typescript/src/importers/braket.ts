@@ -74,8 +74,8 @@ function timeDatum(entry: Obj, extra: Partial<Datum> = {}): Datum {
   return d;
 }
 
-// Braket marks a dead / uncalibrated qubit or edge with the exact numeric pair
-// fidelity == 0.5 AND standardError == 1 on the parsed JSON numbers.
+// Braket fills one unmeasured fidelity with fidelity == 0.5 and standardError == 1.
+// The same qubit or edge often still has a real T1, T2, or readout.
 function isSentinel(entry: Obj): boolean {
   return entry.fidelity === 0.5 && entry.standardError === 1;
 }

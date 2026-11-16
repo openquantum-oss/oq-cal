@@ -1,6 +1,6 @@
 {
   "name": "@openquantum-oss/oq-cal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript reference implementation of the oq-cal device-calibration interchange format (validate, canonical JSON, diff, and converters).",
   "license": "Apache-2.0",
   "type": "module",

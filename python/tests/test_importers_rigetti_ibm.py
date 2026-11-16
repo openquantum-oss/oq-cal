@@ -175,6 +175,61 @@ def test_rigetti_specs_fill_a_missing_standard_error_only_when_the_value_matches
     assert validate(doc) == []
 
 
+def test_pulse_component_ids_do_not_inflate_num_qubits():
+    """Cepheus frames number couplers past the logical roster.
+
+    qubitCount is the count of present qubits (107, with a gap). The address
+    bound is max logical index + 1 (108) so ``$107`` stays in range. A frame
+    mapped to component 292 must not raise that bound or become a defcal.
+    """
+    header = {
+        "name": "braket.device_schema.rigetti.rigetti_device_capabilities",
+        "version": "2",
+    }
+    payload = {
+        "braketSchemaHeader": header,
+        "paradigm": {
+            "qubitCount": 107,
+            "connectivity": {
+                "connectivityGraph": {
+                    "0": ["1"],
+                    "1": ["0"],
+                    "106": ["107"],
+                    "107": ["106"],
+                }
+            },
+        },
+        "standardized": {
+            "braketSchemaHeader": {
+                "name": "braket.device_schema.standardized_gate_model_qpu_device_properties",
+                "version": "1",
+            },
+            "oneQubitProperties": {
+                "0": {"T1": {"value": 1.0e-5, "unit": "S"}},
+                "107": {"T1": {"value": 1.2e-5, "unit": "S"}},
+            },
+        },
+        "pulse": {
+            "frames": {
+                "q0_rx": {
+                    "frequency": 4.5e9,
+                    "associatedGate": "rx",
+                    "qubitMappings": [0],
+                },
+                "coupler_292": {
+                    "frequency": 1.0e9,
+                    "associatedGate": "cz",
+                    "qubitMappings": [292],
+                },
+            }
+        },
+    }
+    doc = from_braket_rigetti(payload)
+    assert doc.device.num_qubits == 108
+    assert [item.qubits for item in doc.defcals] == [["$0"]]
+    assert validate(doc) == []
+
+
 def test_rigetti_rejects_the_wrong_schema():
     with pytest.raises(BraketSchemaError):
         from_braket_rigetti(

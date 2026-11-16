@@ -109,10 +109,12 @@ def _time_datum(entry: dict, **extra: Any) -> Datum:
 
 
 def _is_sentinel(entry: dict) -> bool:
-    """Detect Braket's uncalibrated-element sentinel.
+    """Detect Braket's unmeasured-benchmark sentinel.
 
-    Braket marks a dead / uncalibrated qubit or edge with the exact numeric pair
-    ``fidelity == 0.5`` AND ``standardError == 1`` on the parsed JSON numbers.
+    Braket fills one fidelity that was not taken this cycle with the exact pair
+    ``fidelity == 0.5`` AND ``standardError == 1``. The same qubit or edge often
+    still has a real T1, T2, or readout. The pair marks that one datum, not a
+    dead element.
     """
     return entry.get("fidelity") == 0.5 and entry.get("standardError") == 1
 
@@ -132,7 +134,8 @@ def _fidelity_datum(entry: dict, *, metric: Optional[str] = None) -> Datum:
 
     A sentinel datum (see :func:`_is_sentinel`) keeps ``value: 0.5`` but DROPS
     the std_error (it is a marker, not a measurement) and is flagged
-    ``status: "unmeasured"`` so downstream consumers exclude it from aggregates.
+    ``status: "unmeasured"`` so downstream consumers exclude that datum from
+    aggregates. Other datums on the same qubit or edge stay as measured.
     """
     kw: dict[str, Any] = {"value": float(entry["fidelity"]), "unit": "dimensionless"}
     if metric:
