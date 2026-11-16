@@ -56,6 +56,39 @@ describe("rigetti capabilities", () => {
     expect(doc.gates).toBeUndefined();
   });
 
+  it("ignores pulse component ids outside the logical roster", () => {
+    const doc = fromBraketRigetti({
+      braketSchemaHeader: {
+        name: "braket.device_schema.rigetti.rigetti_device_capabilities",
+        version: "2",
+      },
+      paradigm: {
+        qubitCount: 107,
+        connectivity: {
+          connectivityGraph: { "0": ["1"], "1": ["0"], "106": ["107"], "107": ["106"] },
+        },
+      },
+      standardized: {
+        braketSchemaHeader: {
+          name: "braket.device_schema.standardized_gate_model_qpu_device_properties",
+          version: "1",
+        },
+        oneQubitProperties: {
+          "0": { T1: { value: 1e-5, unit: "S" } },
+          "107": { T1: { value: 1.2e-5, unit: "S" } },
+        },
+      },
+      pulse: {
+        frames: {
+          q0_rx: { frequency: 4.5e9, associatedGate: "rx", qubitMappings: [0] },
+          coupler_292: { frequency: 1e9, associatedGate: "cz", qubitMappings: [292] },
+        },
+      },
+    });
+    expect(doc.device.num_qubits).toBe(108);
+    expect(doc.defcals?.map((item) => item.qubits)).toEqual([["$0"]]);
+  });
+
   it("imports the fictional capabilities fixture without gate errors", () => {
     const doc = fromBraketRigetti(load("rigetti/synthetic_rigetti_capabilities.json"));
     expect(doc.device.num_qubits).toBe(3);

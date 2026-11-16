@@ -49,7 +49,7 @@ and QUAM importers:
 | `01-braket-iqm-garnet` | `braket` | IQM Garnet, per-qubit, 20 qubits (1-based source remapped to 0-based) |
 | `02-braket-iqm-emerald` | `braket` | IQM Emerald, per-qubit, 54 qubits (1-based source remapped to 0-based) |
 | `03-braket-aqt-ibex-q1` | `braket` | AQT Ibex, mixed granularity |
-| `04-braket-cepheus-108` | `braket` | IQM Cepheus-1, v1, 108 qubits, sparse; dead-element sentinels (4 qubits, 29 CZ edges) flagged `status: "unmeasured"` |
+| `04-braket-cepheus-108` | `braket` | Cepheus-1-108Q standardized block, sparse; 0.5/1 fidelities flagged `status: "unmeasured"` on the benchmark, not as a dead qubit |
 | `05-braket-ionq-forte-1` | `braket` | aggregates-only; no qubit count published |
 | `06-braket-ionq-forte-1-num-qubits` | `braket` | `num_qubits=36` kwarg handling |
 | `07-braket-ionq-forte-1-enterprise` | `braket` | aggregates-only |

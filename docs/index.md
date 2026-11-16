@@ -5,7 +5,7 @@ characterization data: coherence times, gate and readout fidelities, frequencies
 confusion matrices, and pulse-level parameters. It ships with a reference Python library
 and a TypeScript port, with converters to and from the formats in common use today.
 
-**Version 0.1.0.** Each document carries spec version `0.1`.
+**Version 0.1.1.** Each document carries spec version `0.1`.
 
 [Get started](guides/getting-started.md){ .md-button .md-button--primary }
 [Read the spec](spec/introduction.md){ .md-button }

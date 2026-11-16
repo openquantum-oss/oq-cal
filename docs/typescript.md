@@ -5,7 +5,7 @@ so Node and browser tooling can produce and consume oq-cal documents without a P
 runtime. It is checked against the cross-language [conformance vectors](conformance.md), so
 identical inputs produce structurally identical documents in both languages.
 
-**Version 0.1.0.** The package is not on npm. Build it from `typescript/` in this repository.
+**Version 0.1.1.** The package is not on npm. Build it from `typescript/` in this repository.
 
 ## Package
 
@@ -101,8 +101,9 @@ to `"braket-device"` only when it is not supplied.
 
 These mirror the Python importers one-for-one; see the
 [converting guides](guides/converting-braket.md) for the normalization rules each applies.
-The Braket importer also applies the dead-element sentinel convention (fidelity
-`0.5` + standardError `1` -> `status: "unmeasured"`), identically to Python.
+The Braket importer also applies the unmeasured-benchmark sentinel (fidelity
+`0.5` + standardError `1` -> `status: "unmeasured"` on that datum), identically
+to Python. A live T1 or readout on the same qubit stays a measurement.
 
 ### Exporters
 

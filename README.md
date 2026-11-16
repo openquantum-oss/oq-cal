@@ -5,7 +5,7 @@ data: coherence times, gate and readout fidelities, frequencies, confusion matri
 pulse-level parameters. Ships with a reference Python library and a TypeScript port, with
 converters to and from the formats in common use today.
 
-> **Version 0.1.0.** Each document carries spec version `0.1`. See [CHANGELOG.md](CHANGELOG.md).
+> **Version 0.1.1.** Each document carries spec version `0.1`. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Why
 

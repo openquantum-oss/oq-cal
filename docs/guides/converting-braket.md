@@ -160,17 +160,19 @@ preserved verbatim under `extensions`.
     sorted numerically by `(i, j)`. Payloads without per-pair tables (e.g. IonQ, AQT) carry
     no pair evidence and so produce no `coupling_map`.
 
-!!! warning "Dead elements are marked, not dropped"
-    Braket flags an uncalibrated qubit or edge with a sentinel: `fidelity` exactly
-    `0.5` together with `standardError` exactly `1`. The importer detects this on
-    one-qubit fidelities (RB, simultaneous RB, and READOUT) and two-qubit gate
-    fidelities. For a sentinel datum it keeps `value: 0.5`, **drops** the standard
-    error (it is a marker, not a measurement), and sets `status: "unmeasured"`.
-    The element is preserved in place rather than removed, so indices and
-    connectivity stay stable. Per the [spec datum rule](../spec/specification.md#2-the-datum),
-    consumers MUST exclude `bad`/`unmeasured` datums from aggregate statistics; the
-    bundled Qiskit exporter and `oq-cal summary` already honor this (`summary` reports
-    an `unmeasured:` count instead of folding the placeholders into best/worst).
+!!! warning "Unmeasured benchmarks are marked, not dropped"
+    Braket fills a fidelity that was not taken this cycle with `fidelity` exactly
+    `0.5` and `standardError` exactly `1`. That pair shows up on one benchmark
+    (RB or simultaneous RB) or on one two-qubit gate fidelity. The same qubit
+    often still has a measured T1, T2, and readout, so the sentinel is not a dead
+    qubit or a removed edge. The importer keeps `value: 0.5`, **drops** the
+    standard error (it is a marker, not a measurement), and sets
+    `status: "unmeasured"` on that datum only. Per the
+    [spec datum rule](../spec/specification.md#2-the-datum), consumers MUST
+    exclude `bad`/`unmeasured` datums from aggregate statistics and MUST NOT
+    treat the placeholder `0.5` as a measured fidelity. `oq-cal summary` counts
+    those benchmarks on their own; it counts a qubit as unmeasured only when
+    its coherence and readout are themselves placeholders.
 
 ## Rigetti device capabilities
 
@@ -181,7 +183,11 @@ record: `paradigm.qubitCount`, a directed `connectivityGraph`, an optional embed
 T1 or gate errors from the capabilities fields. The same `braket` importer
 reads that header:
 
-* copies qubit count and the graph's directed edges into `device`;
+* sets `device.num_qubits` from `paradigm.qubitCount` and the logical indices in
+  the connectivity graph and standardized tables. The bound is large enough for
+  the highest `$n`. Pulse-frame component ids (couplers, unused transmons) are
+  not part of that roster;
+* copies the graph's directed edges into `device.coupling_map`;
 * runs the standardized importer on `standardized` when that block is present, and
   only then;
 * when `provider.specs` repeats that T1 (`FreeInversionRecovery`) or T2
@@ -190,7 +196,7 @@ reads that header:
   standardized value is left alone, and an error the standardized block already
   carried is not replaced;
 * records a pulse frame as a defcal when the frame has a frequency, an associated
-  gate, and qubit mappings;
+  gate, and qubit mappings that sit inside the logical roster;
 * leaves ports and the native-gate list in `extensions.braket`.
 
 A 1-based graph (no index 0, and index 1 present) is shifted the same way as a

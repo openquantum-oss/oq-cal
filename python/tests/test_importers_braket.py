@@ -319,7 +319,7 @@ def test_cepheus_sentinel_counts():
 def test_sentinel_datum_drops_std_error_keeps_value():
     doc = from_braket_standardized(_load("braket_standardized_cepheus_108.json"))
     qp = doc.qubits["$19"]
-    # the RB benchmark on a dead qubit is the sentinel datum
+    # the RB benchmark is the sentinel datum; the qubit's other properties stay live
     sentinel = next(
         b.fidelity for b in qp.benchmarks if b.fidelity.status == "unmeasured"
     )

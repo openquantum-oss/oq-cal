@@ -386,7 +386,7 @@ def test_summary_reports_unmeasured_count(runner, tmp_path):
     assert r.exit_code == 0, r.output
     r2 = runner.invoke(main, ["summary", str(oq_cal_out)])
     assert r2.exit_code == 0, r2.output
-    assert "unmeasured: 4 qubits, 29 gate entries" in r2.output
+    assert "unmeasured: 8 benchmarks, 29 gate entries" in r2.output
 
 
 def test_summary_no_unmeasured_line_when_clean(runner, tmp_path):

@@ -5,7 +5,7 @@ format for QPU calibration and characterization data. It reads and writes the sa
 documents as the Python reference library and passes the same cross-language
 conformance suite.
 
-> **Version 0.1.0.** Spec version `0.1`. Not published to npm; build it from this directory.
+> **Version 0.1.1.** Spec version `0.1`. Not published to npm; build it from this directory.
 
 ## Install
 

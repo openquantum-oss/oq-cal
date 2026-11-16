@@ -54,6 +54,8 @@ export interface RigettiOptions {
 }
 
 function collectIndices(payload: Obj): Set<number> {
+  // Logical indices only. Pulse-frame qubitMappings on Cepheus include coupler
+  // component ids up to 302 and must not set num_qubits.
   const indices = new Set<number>();
   const paradigm = isObj(payload.paradigm) ? payload.paradigm : {};
   const connectivity = isObj(paradigm.connectivity) ? paradigm.connectivity : {};
@@ -67,17 +69,6 @@ function collectIndices(payload: Obj): Set<number> {
           const dst = asInt(rawDst);
           if (dst !== null) indices.add(dst);
         }
-      }
-    }
-  }
-  const pulse = isObj(payload.pulse) ? payload.pulse : {};
-  const frames = pulse.frames;
-  if (isObj(frames)) {
-    for (const frame of Object.values(frames)) {
-      if (!isObj(frame) || !Array.isArray(frame.qubitMappings)) continue;
-      for (const qubit of frame.qubitMappings) {
-        const idx = asInt(qubit);
-        if (idx !== null) indices.add(idx);
       }
     }
   }
@@ -141,6 +132,15 @@ function graphEdges(payload: Obj, shift: number): Array<[number, number]> {
     }
   }
   return edges;
+}
+
+function inRoster(qubits: string[], numQubits: unknown): boolean {
+  if (typeof numQubits !== "number") return true;
+  return qubits.every((ref) => {
+    if (!ref.startsWith("$")) return false;
+    const index = Number(ref.slice(1));
+    return Number.isInteger(index) && index >= 0 && index < numQubits;
+  });
 }
 
 function pulseDefcals(payload: Obj, shift: number): Obj[] {
@@ -274,7 +274,9 @@ export function fromBraketRigetti(payload: object, opts: RigettiOptions = {}): O
     device.qubit_labels = labels;
   }
 
-  const defcals = pulseDefcals(p, shift);
+  const defcals = pulseDefcals(p, shift).filter((item) =>
+    inRoster(item.qubits as string[], device.num_qubits),
+  );
   if (defcals.length > 0) {
     const existing = Array.isArray(doc.defcals) ? (doc.defcals as Obj[]) : [];
     doc.defcals = existing.concat(defcals);
