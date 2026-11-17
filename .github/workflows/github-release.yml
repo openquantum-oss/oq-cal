@@ -1,0 +1,35 @@
+name: GitHub release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/github-release.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open the v0.1.1 GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v0.1.1 >/dev/null 2>&1; then
+            echo "Release v0.1.1 already exists"
+            exit 0
+          fi
+          gh release create v0.1.1 \
+            --title "oq-cal 0.1.1" \
+            --target v0.1.1 \
+            --notes "$(cat <<'NOTES'
+- Rigetti import no longer counts pulse-frame component ids toward `device.num_qubits`. Cepheus stays at 108.
+- A pulse frame outside that roster is not emitted as a defcal.
+- `oq-cal summary` counts a `0.5`/`1` sentinel as an unmeasured benchmark. A qubit is counted only when its coherence and readout are themselves placeholders.
+
+Install the Python library with `pip install oq-cal`.
+NOTES
+)"
