@@ -26,5 +26,5 @@ jobs:
           fi
           gh release create v0.1.1 \
             --title "oq-cal 0.1.1" \
-            --target v0.1.1 \
+            --target dd4b7915db2bb894cc7324c5dafe0cd4cd24c1ed \
             --notes-file .github/release-notes-0.1.1.md
